@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CTfastrak</title>
+    <meta name="description" content="A map of the CTfastrak bus rapid transit route.">
+    <meta name="author" content="OpenPlans">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="lib/leaflet-0.4-master/leaflet.css" rel="stylesheet">
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/leaflet.ie.css" /><![endif]-->
+    <link href="http://mapbox.com/wax/css/controls.css" rel="stylesheet">
+    <style type="text/css">
+      #map {
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="map"></div>
+  </body>
+
+  <script src="lib/leaflet-0.4-master/leaflet.js"></script>
+  <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
+
+  <script>
+    var map = new L.Map('map');
+
+    wax.tilejson('http://a.tiles.mapbox.com/v3/atogle.map-th97kcjv.jsonp',
+      function(tilejson) {
+        map
+          .addLayer(new wax.leaf.connector(tilejson))
+          .setView(new L.LatLng(41.6246, -72.8287), 11);
+      }
+    );
+
+    wax.tilejson('http://a.tiles.mapbox.com/v3/atogle.ctbusway.jsonp',
+      function(tilejson) {
+        map.addLayer(new wax.leaf.connector(tilejson));
+
+        wax.leaf.interaction()
+          .map(map)
+          .tilejson(tilejson)
+          .on(wax.tooltip().animate(true).parent(map._container).events());
+      }
+    );
+  </script>
+</html>

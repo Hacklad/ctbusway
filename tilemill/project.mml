@@ -1,0 +1,69 @@
+{
+  "bounds": [
+    -72.7892,
+    41.6662,
+    -72.6773,
+    41.7703
+  ],
+  "center": [
+    -72.7364,
+    41.7167,
+    12
+  ],
+  "format": "png",
+  "interactivity": {
+    "layer": "busway",
+    "template_teaser": "Hovering over the busway {{Id}}",
+    "template_full": "Clicking on the busway {{Id}}",
+    "fields": [
+      "Id"
+    ]
+  },
+  "minzoom": 9,
+  "maxzoom": 19,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "id": "countries",
+      "name": "countries",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "geometry": "polygon",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "type": "shape"
+      }
+    },
+    {
+      "geometry": "linestring",
+      "id": "busway",
+      "class": "bus",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/Busway/Busway.zip",
+        "id": "busway",
+        "project": "ctbusway",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "busway"
+    },
+    {
+      "geometry": "point",
+      "id": "buswaystops",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/Busway/Busway_Stops.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "buswaystops"
+    }
+  ],
+  "name": "CT Busway",
+  "description": "",
+  "attribution": "",
+  "legend": ""
+}
