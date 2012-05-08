@@ -30,25 +30,30 @@
   <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
 
   <script>
-    var map = new L.Map('map');
+    var baseUrl = 'http://a.tiles.mapbox.com/v3/civicworks.map-7t4ctm10/{z}/{x}/{y}.png',
+        transitUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway-transit.jsonp',
+        map = new L.Map('map', {
+          minZoom: 11,
+          maxZoom: 14,
+          maxBounds: new L.LatLngBounds(
+            new L.LatLng(41.2,-74.2),
+            new L.LatLng(42.3,-71.0)
+          )
+        }),
+        baseLayer = new L.TileLayer(baseUrl, {
+          attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+        });
 
-    wax.tilejson('http://a.tiles.mapbox.com/v3/atogle.map-th97kcjv.jsonp',
-      function(tilejson) {
-        map
-          .addLayer(new wax.leaf.connector(tilejson))
-          .setView(new L.LatLng(41.6246, -72.8287), 11);
-      }
-    );
+    map.attributionControl.setPrefix('');
+    map.addLayer(baseLayer).setView(new L.LatLng(41.7656, -72.6756), 11);
 
-    wax.tilejson('http://a.tiles.mapbox.com/v3/atogle.ctbusway.jsonp',
-      function(tilejson) {
-        map.addLayer(new wax.leaf.connector(tilejson));
+    wax.tilejson(transitUrl, function(tilejson) {
+      map.addLayer(new wax.leaf.connector(tilejson));
 
-        wax.leaf.interaction()
-          .map(map)
-          .tilejson(tilejson)
-          .on(wax.tooltip().animate(true).parent(map._container).events());
-      }
-    );
+      wax.leaf.interaction()
+        .map(map)
+        .tilejson(tilejson)
+        .on(wax.tooltip().animate(true).parent(map._container).events());
+    });
   </script>
 </html>
