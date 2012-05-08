@@ -1,20 +1,20 @@
 {
   "bounds": [
-    -72.7892,
-    41.6662,
-    -72.6773,
-    41.7703
+    -72.9543,
+    41.5479,
+    -72.3144,
+    42.0261
   ],
   "center": [
-    -72.7364,
-    41.7167,
-    12
+    -72.6721,
+    41.768,
+    11
   ],
   "format": "png",
   "interactivity": {
-    "layer": "busway",
-    "template_teaser": "Hovering over the busway {{Id}}",
-    "template_full": "Clicking on the busway {{Id}}",
+    "layer": "expressroutesapril22",
+    "template_teaser": "Hovering over express {{LineName}}",
+    "template_full": "",
     "fields": [
       "Id"
     ]
@@ -27,21 +27,75 @@
   ],
   "Layer": [
     {
-      "id": "countries",
-      "name": "countries",
-      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-      "geometry": "polygon",
+      "geometry": "linestring",
+      "id": "new20britain20routes",
+      "class": "routes",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
-        "type": "shape"
-      }
+        "file": "http://ctbusway.s3.amazonaws.com/shp/New%20Britain%20Routes%20.zip",
+        "id": "new20britain20routes",
+        "project": "ctbusway",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "new20britain20routes"
+    },
+    {
+      "geometry": "point",
+      "id": "new20britain20stops2",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/New%20Britain%20Stops%20.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "new20britain20stops2"
+    },
+    {
+      "geometry": "multilinestring",
+      "id": "localroutesapril222c",
+      "class": "routes",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Local_Routes_April_22%2C_2012_BID.zip",
+        "id": "localroutesapril222c",
+        "project": "ctbusway",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "localroutesapril222c"
+    },
+    {
+      "geometry": "multilinestring",
+      "id": "expressroutesapril22",
+      "class": "routes",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Express_Routes_April_22%2C_2012_BID.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "expressroutesapril22"
+    },
+    {
+      "geometry": "point",
+      "id": "hartfordbusstopsapri",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Hartford_Bus_Stops_April_22%2C_2012_BID.zip",
+        "id": "hartfordbusstopsapri",
+        "project": "ctbusway",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "hartfordbusstopsapri"
     },
     {
       "geometry": "linestring",
       "id": "busway",
-      "class": "bus",
+      "class": "routes",
       "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/Busway/Busway.zip",
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Busway.zip",
         "id": "busway",
         "project": "ctbusway",
         "srs": null
@@ -55,7 +109,10 @@
       "id": "buswaystops",
       "class": "stops",
       "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/Busway/Busway_Stops.zip"
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Busway_Stops.zip",
+        "id": "buswaystops",
+        "project": "ctbusway",
+        "srs": null
       },
       "srs-name": "autodetect",
       "srs": "",
