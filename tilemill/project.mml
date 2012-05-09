@@ -12,11 +12,11 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "expressroutesapril22",
-    "template_teaser": "Hovering over express {{LineName}}",
+    "layer": "hartfordbusstopsapri",
+    "template_teaser": "{{#StopName}}\nStop: {{StopName}}\n{{/StopName}}\n\n{{^StopName}}\nNo Stop Name\n{{/StopName}}\n\n",
     "template_full": "",
     "fields": [
-      "Id"
+      "LineName"
     ]
   },
   "minzoom": 9,
@@ -26,6 +26,28 @@
     "style.mss"
   ],
   "Layer": [
+    {
+      "geometry": "polygon",
+      "id": "townct3780000002010s",
+      "class": "boundaries",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/townct_37800_0000_2010_s100_census_1_shp_nad83_feet.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "townct3780000002010s"
+    },
+    {
+      "geometry": "linestring",
+      "id": "metronorthrrroutes10",
+      "class": "routes",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/metro_north_rr_routes_100413.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "metronorthrrroutes10"
+    },
     {
       "geometry": "linestring",
       "id": "new20britain20routes",
@@ -92,6 +114,28 @@
     },
     {
       "geometry": "linestring",
+      "id": "btsamtraklines",
+      "class": "routes",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/bts_amtrak_lines.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "btsamtraklines"
+    },
+    {
+      "geometry": "point",
+      "id": "btsamtraksta",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/bts_amtrak_sta.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "btsamtraksta"
+    },
+    {
+      "geometry": "linestring",
       "id": "busway",
       "class": "routes",
       "Datasource": {
@@ -117,6 +161,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "buswaystops"
+    },
+    {
+      "geometry": "point",
+      "id": "metronorthrrstops100",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/metro_north_rr_stops_100413.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "metronorthrrstops100"
     }
   ],
   "name": "CT Busway",

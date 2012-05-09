@@ -2,6 +2,8 @@
 @express:#E41A1C;
 @local:#377EB8;
 @newbritain:#FF7F00;
+@amtrak:#FFFF33;
+@metronorth:#984EA3;
 @default:#aaa;
 
 .stops {
@@ -21,7 +23,7 @@
 }
 
 #busway {  
-  line-width:3;
+  line-width:4;
   line-color:@busway;
 }
 
@@ -41,6 +43,7 @@
 }
 
 #expressroutesapril22 {
+  line-width:2;
   line-color:@express;
 }
 
@@ -49,4 +52,36 @@
 
 #localroutesapril222c {
   line-color:@local;
+}
+
+#btsamtraklines {
+  line-color:@amtrak;
+}
+
+#btsamtraksta {
+  marker-fill:darken(@amtrak, 10%);
+  marker-line-color:darken(@amtrak, 20%);
+}
+
+#statect3780000002010 {
+  line-color:#594;
+  line-width:0.5;
+  polygon-opacity:1;
+  polygon-fill:none;
+}
+
+#townct3780000002010s {
+  line-color:@default;
+  line-width:0.5;
+  polygon-opacity:0;
+}
+
+#metronorthrrroutes10 {
+  line-color:@metronorth;
+}
+
+
+#metronorthrrstops100 {
+  marker-fill:darken(@metronorth, 10%);
+  marker-line-color:darken(@metronorth, 20%);
 }
