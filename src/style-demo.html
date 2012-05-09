@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>CTfastrak</title>
+    <meta name="description" content="A map of the CTfastrak bus rapid transit route.">
+    <meta name="author" content="OpenPlans">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="lib/leaflet-0.4-master/leaflet.css" rel="stylesheet">
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/leaflet.ie.css" /><![endif]-->
+    <style type="text/css">
+      .leaflet-control-zoom { display: none;}
+
+      .wax-tooltip {
+        z-index:999999;
+        position:absolute;
+        background:#333;
+        color:#fff;
+        padding:10px;
+        -webkit-user-select:auto;
+        left:10px;
+        top:10px;
+        max-width:300px;
+        opacity:1;
+        -webkit-transition:opacity 150ms;
+        -moz-transition:opacity 150ms;
+
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size:0.8em;
+      }
+
+      .wax-fade { opacity:0; }
+
+      .wax-tooltip .close {
+        display:block;
+        position:absolute;
+        top:0px;
+        right:0px;
+      }
+
+      #map {
+        position: absolute;
+        top:0;
+        bottom:0;
+        right:0;
+        left:0;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div id="map"></div>
+  </body>
+
+  <script src="lib/leaflet-0.4-master/leaflet.js"></script>
+  <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
+
+  <script>
+    var baseUrl = 'http://a.tiles.mapbox.com/v3/civicworks.map-akuytyon/{z}/{x}/{y}.png',
+        transitUrl = 'http://a.tiles.mapbox.com/v3/civicworks.styled-ctbusway-transit.jsonp',
+        map = new L.Map('map', {
+          minZoom: 12,
+          maxZoom: 12,
+          maxBounds: new L.LatLngBounds(
+            new L.LatLng(41.2,-74.2),
+            new L.LatLng(42.3,-71.0)
+          )
+        }),
+        baseLayer = new L.TileLayer(baseUrl, {
+          attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+        });
+
+    map.attributionControl.setPrefix('');
+    map.addLayer(baseLayer).setView(new L.LatLng(41.7159, -72.7319), 12);
+
+    wax.tilejson(transitUrl, function(tilejson) {
+      map.addLayer(new wax.leaf.connector(tilejson));
+
+      wax.leaf.interaction()
+        .map(map)
+        .tilejson(tilejson)
+        .on(wax.tooltip().animate(true).parent(map._container).events());
+    });
+  </script>
+</html>
