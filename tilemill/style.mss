@@ -9,17 +9,13 @@
 .stops {
   marker-fill:darken(@default, 10%);
   marker-line-color:darken(@default, 20%);
-  marker-width:1;
-  marker-opacity:0.8;
-  marker-allow-overlap:true;
-  
-  [zoom<13] {
-    marker-width:0;
-  }
+  marker-width:0;
+  marker-opacity:1;
+  marker-allow-overlap:true;  
 }
 
 .routes {
-  line-width:1;
+  line-width:0;
 }
 
 #busway {  
@@ -28,9 +24,14 @@
 }
 
 #buswaystops {
-  marker-width:2;
-  marker-fill:darken(@busway, 10%);
-  marker-line-color:darken(@busway, 20%);
+  marker-width:3;
+  marker-fill:darken(@busway, 5%);
+  marker-line-color:@busway;
+}
+
+/*
+.stops[zoom>12] {
+  marker-width:1;
 }
 
 #new20britain20routes {
@@ -85,3 +86,4 @@
   marker-fill:darken(@metronorth, 10%);
   marker-line-color:darken(@metronorth, 20%);
 }
+*/

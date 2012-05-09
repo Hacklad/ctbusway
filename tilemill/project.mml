@@ -12,8 +12,8 @@
   ],
   "format": "png",
   "interactivity": {
-    "layer": "hartfordbusstopsapri",
-    "template_teaser": "{{#StopName}}\nStop: {{StopName}}\n{{/StopName}}\n\n{{^StopName}}\nNo Stop Name\n{{/StopName}}\n\n",
+    "layer": "buswaystops",
+    "template_teaser": "{{Name}}",
     "template_full": "",
     "fields": [
       "LineName"
@@ -47,6 +47,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "metronorthrrroutes10"
+    },
+    {
+      "geometry": "point",
+      "id": "metronorthrrstops100",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/metro_north_rr_stops_100413.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "metronorthrrstops100"
     },
     {
       "geometry": "linestring",
@@ -161,17 +172,6 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "buswaystops"
-    },
-    {
-      "geometry": "point",
-      "id": "metronorthrrstops100",
-      "class": "stops",
-      "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/shp/metro_north_rr_stops_100413.zip"
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "metronorthrrstops100"
     }
   ],
   "name": "CT Busway",
