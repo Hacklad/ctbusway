@@ -1,0 +1,20 @@
+{
+  "shps": {
+    "Busway_Stops": {
+      "type": "busyway",
+      "name": "%(Name)s"
+    },
+    "amtrk_sta": {
+      "type": "amtrak",
+      "name": "%(STNNAME)s"
+    },
+    "Hartford_Bus_Stops_April_22,_2012_BID": {
+      "type": "hartford",
+      "name": "%(StopName)s"
+    },
+    "mnrrstops_100413": {
+      "type": "metro_north",
+      "name": "%(stop_name)s"
+    }
+  }
+}
