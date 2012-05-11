@@ -1,6 +1,11 @@
 {
   "geomtype": "MultiLineString",
   "shps": {
+    "Busway": {
+      "type": "busway",
+      "agency": "",
+      "name": "CTfastrak Busway"
+    },
     "ALL_ROUTES": {
       "type": "allroutes",
       "agency": "",
@@ -10,11 +15,6 @@
       "type": "amtrak",
       "agency": "",
       "name": "Amtrak"
-    },
-    "Busway": {
-      "type": "busway",
-      "agency": "",
-      "name": "CTfastrak Busway"
     },
     "mnrrroutes_100413": {
       "type": "metro_north",
