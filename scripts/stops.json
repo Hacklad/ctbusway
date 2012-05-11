@@ -1,19 +1,18 @@
 {
   "shps": {
     "Busway_Stops": {
-      "type": "busyway",
+      "type": "busway",
+      "agency": "CTfastrak Busway",
       "name": "%(Name)s"
     },
     "amtrk_sta": {
       "type": "amtrak",
+      "agency": "Amtrak",
       "name": "%(STNNAME)s"
-    },
-    "Hartford_Bus_Stops_April_22,_2012_BID": {
-      "type": "hartford",
-      "name": "%(StopName)s"
     },
     "mnrrstops_100413": {
       "type": "metro_north",
+      "agency": "Metro-North",
       "name": "%(stop_name)s"
     }
   }

@@ -1,0 +1,24 @@
+{
+  "shps": {
+    "ALL_ROUTES": {
+      "type": "allroutes",
+      "agency": "",
+      "name": "%(ROUTE_NAME)s"
+    },
+    "amtrak_ct": {
+      "type": "amtrak",
+      "agency": "",
+      "name": "Amtrak"
+    },
+    "Busway": {
+      "type": "busway",
+      "agency": "",
+      "name": "CTfastrak Busway"
+    },
+    "mnrrroutes_100413": {
+      "type": "metro_north",
+      "agency": "Metro-North",
+      "name": "%(route_long)s"
+    }
+  }
+}
