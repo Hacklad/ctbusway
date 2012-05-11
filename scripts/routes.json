@@ -1,4 +1,5 @@
 {
+  "geomtype": "MultiLineString",
   "shps": {
     "ALL_ROUTES": {
       "type": "allroutes",

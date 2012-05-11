@@ -1,4 +1,5 @@
 {
+  "geomtype": "Point",
   "shps": {
     "Busway_Stops": {
       "type": "busway",
