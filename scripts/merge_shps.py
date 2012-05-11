@@ -5,6 +5,8 @@ from geoscript.proj import Projection
 from sys import argv
 import geoscript.geom
 import simplejson as json
+import re
+
 
 
 def merge_shapefiles(config, out_layer):
@@ -22,6 +24,7 @@ def merge_shapefiles(config, out_layer):
                 continue
 
             # Save it to memory
+            print "Adding", attrs['name']
             new_feature = schema.feature(attrs)
             out_layer.add(new_feature)
     return out_layer
@@ -30,6 +33,7 @@ def get_attrs_from_feature(f, shp_config):
     # Construct the normalized attributes.
 
     # Possibly skip this feature.
+    shp_config = shp_config.copy()
     whitelist_map = shp_config.pop('whitelist', {})
 
     attrs = {'geom': f.geom}
@@ -37,12 +41,27 @@ def get_attrs_from_feature(f, shp_config):
         if whitelist_map:
             for whitelist_field, whitelist_values in whitelist_map.items():
                 if f[whitelist_field] not in whitelist_values:
+                    print "SKIPPING", f[whitelist_field], "... not in whitelist"
                     return None
 
         attrs[k] = v % dict(f)
 
-    print attrs['name']
+    # Special case for calculating route types
+    if attrs['type'] == 'ALL ROUTES TYPE':
+        attrs['type'] = get_allroutes_type(**attrs)
+
     return attrs
+
+def get_allroutes_type(**kwargs):
+    route = kwargs['name']
+    if re.search(r'^C\d+\s+', route):
+        return 'connector_circulator_bus'
+    if re.search(r'^BX\d+\s+', route):
+        return 'express_bus'
+    if re.search(r'^BW\d+\s+', route):
+        return 'busway_local'
+    return 'local_feeder_bus'
+
 
 if __name__ == '__main__':
 

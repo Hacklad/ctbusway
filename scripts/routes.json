@@ -7,7 +7,7 @@
       "name": "CTfastrak Busway"
     },
     "ALL_ROUTES": {
-      "type": "TODO - ALL ROUTES TYPE",
+      "type": "ALL ROUTES TYPE",
       "agency": "",
       "name": "%(ROUTE_NAME)s",
       "whitelist": {
