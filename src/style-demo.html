@@ -59,7 +59,8 @@
 
   <script>
     var baseUrl = 'http://a.tiles.mapbox.com/v3/civicworks.map-akuytyon/{z}/{x}/{y}.png',
-        transitUrl = 'http://a.tiles.mapbox.com/v3/civicworks.styled-ctbusway-transit.jsonp',
+        routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
+        stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
         map = new L.Map('map', {
           minZoom: 12,
           maxZoom: 12,
@@ -75,13 +76,21 @@
     map.attributionControl.setPrefix('');
     map.addLayer(baseLayer).setView(new L.LatLng(41.7159, -72.7319), 12);
 
-    wax.tilejson(transitUrl, function(tilejson) {
-      map.addLayer(new wax.leaf.connector(tilejson));
+    function initMapboxLayer(url, callback) {
+      wax.tilejson(url, function(tilejson) {
+        map.addLayer(new wax.leaf.connector(tilejson));
 
-      wax.leaf.interaction()
-        .map(map)
-        .tilejson(tilejson)
-        .on(wax.tooltip().animate(true).parent(map._container).events());
+        wax.leaf.interaction()
+          .map(map)
+          .tilejson(tilejson)
+          .on(wax.tooltip().animate(true).parent(map._container).events());
+
+        if (callback) { callback(); };
+      });
+    }
+
+    initMapboxLayer(routesUrl, function(){
+      initMapboxLayer(stopsUrl)
     });
   </script>
 </html>
