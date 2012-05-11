@@ -4,6 +4,7 @@
 @newbritain:#FF7F00;
 @amtrak:#FFFF33;
 @metronorth:#984EA3;
+@all:#F781BF;
 @default:#aaa;
 
 .stops {
@@ -15,7 +16,7 @@
 }
 
 .routes {
-  line-width:0;
+  line-width:1;
 }
 
 #busway {  
@@ -29,7 +30,6 @@
   marker-line-color:@busway;
 }
 
-/*
 .stops[zoom>12] {
   marker-width:1;
 }
@@ -86,4 +86,7 @@
   marker-fill:darken(@metronorth, 10%);
   marker-line-color:darken(@metronorth, 20%);
 }
-*/
+
+#allroutesbusway {
+  line-color:@all;
+}

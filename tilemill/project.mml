@@ -16,7 +16,7 @@
     "template_teaser": "{{Name}}",
     "template_full": "",
     "fields": [
-      "LineName"
+      "Name"
     ]
   },
   "minzoom": 9,
@@ -144,6 +144,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "btsamtraksta"
+    },
+    {
+      "geometry": "linestring",
+      "id": "allroutesbusway",
+      "class": "routes",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/ALL_ROUTES_BUSWAY.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "allroutesbusway"
     },
     {
       "geometry": "linestring",
