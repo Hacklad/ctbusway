@@ -2,7 +2,7 @@ from geoscript.workspace import Directory, Memory
 from geoscript.layer import Layer
 from geoscript.feature import Schema
 from geoscript.proj import Projection
-from sys import argv
+import sys
 import geoscript.geom
 import simplejson as json
 import re
@@ -66,7 +66,7 @@ def get_allroutes_type(**kwargs):
 if __name__ == '__main__':
 
     # Get the arguments, naively
-    script, shp_dir, config_file_name, out_file = argv
+    script, shp_dir, config_file_name, out_file = sys.argv
 
     # Read the json config file
     f = open(config_file_name, 'r')
@@ -87,6 +87,11 @@ if __name__ == '__main__':
         ('type', str), ('name', str), ('agency', str)
     ])
     out_layer = Layer(schema=schema)
-    out_layer = merge_shapefiles(config, out_layer)
-    # Write it to the shape file
-    out_ws.add(out_layer)
+    try:
+        out_layer = merge_shapefiles(config, out_layer)
+        # Write it to the shape file
+        out_ws.add(out_layer)
+    except Exception, e:
+        sys.stderr.write("Error saving. Try deleting output files and re-run?\n")
+        sys.stderr.write("Error was: %s\n" % e)
+        sys.exit(1)
