@@ -6,7 +6,7 @@ import sys
 import geoscript.geom
 import simplejson as json
 import re
-
+import os
 
 
 def merge_shapefiles(config, out_layer):
@@ -74,7 +74,10 @@ if __name__ == '__main__':
 
     # Create the workspaces
     in_ws = Directory(shp_dir)
-    out_ws = Directory('out')
+    output_dir = out_file
+    if not os.path.isdir(output_dir):
+        os.mkdir(output_dir)
+    out_ws = Directory(output_dir)
     mem_ws = Memory()
 
     # Show the layers are about to merge
@@ -95,3 +98,4 @@ if __name__ == '__main__':
         sys.stderr.write("Error saving. Try deleting output files and re-run?\n")
         sys.stderr.write("Error was: %s\n" % e)
         sys.exit(1)
+    print "Output is in %s" % os.path.join(output_dir, out_file + '.shp')
