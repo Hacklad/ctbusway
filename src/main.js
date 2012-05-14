@@ -72,6 +72,14 @@
     $('#nav-bttn').click(function(){
       $('#main-menu').toggleClass('expose');
     });
+
+    $('.close-bttn').click(function(){
+      $('.dialog').hide();
+    });
+
+    $('.about a').click(function() {
+      $('#about').show();      
+    });
   };
 
   initLocation();

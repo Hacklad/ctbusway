@@ -170,12 +170,14 @@ button {width: auto; overflow: visible;}
   background: url(images/ctfastrack.png) 0 0 no-repeat scroll;
   width: 178px;
   height: 26px;
-  text-indent: -9999px;
   overflow: hidden;
   margin: 0;
 }
 #site-title a {
-  text-decoration: none;
+  display: block;
+  width: 178px;
+  height: 26px;
+  text-indent: -9999px;
 }
 #site-description {
 	color: #777;
@@ -393,7 +395,7 @@ a.close-bttn:hover {
     width: 24px;
     height: 40px;
     position: absolute;
-    bottom: 0;
+    bottom: 0.25em;
     left: 0;
   }
   #main-menu li.geolocation a:hover:before {
