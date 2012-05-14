@@ -21,9 +21,9 @@
 
     <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
 
-    <link href="lib/leaflet-0.4-master/leaflet.css" rel="stylesheet">
+    <link href="lib/leaflet-0.3.1/leaflet.css" rel="stylesheet">
     <!--[if lte IE 8]>
-      <link rel="stylesheet" href="/css/leaflet.ie.css" />
+      <link rel="stylesheet" href="lib/leaflet-0.3.1/leaflet.ie.css" />
     <![endif]-->
 
     <!--[if lt IE 9]>
@@ -50,45 +50,9 @@
 
     <div id="map"></div>
 
-    <script src="lib/leaflet-0.4-master/leaflet.js"></script>
+    <script src="lib/jquery-1.7.2.min.js"></script>
+    <script src="lib/leaflet-0.3.1/leaflet.js"></script>
     <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
-
-    <script>
-      var baseUrl = 'http://a.tiles.mapbox.com/v3/civicworks.map-akuytyon/{z}/{x}/{y}.png',
-          routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
-          stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
-          map = new L.Map('map', {
-            minZoom: 12,
-            maxZoom: 12,
-            maxBounds: new L.LatLngBounds(
-              new L.LatLng(41.2,-74.2),
-              new L.LatLng(42.3,-71.0)
-            )
-          }),
-          baseLayer = new L.TileLayer(baseUrl, {
-            attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
-          });
-
-      map.attributionControl.setPrefix('');
-      map.addLayer(baseLayer).setView(new L.LatLng(41.7159, -72.7319), 12);
-
-      function initMapboxLayer(url, callback) {
-        wax.tilejson(url, function(tilejson) {
-          map.addLayer(new wax.leaf.connector(tilejson));
-
-          wax.leaf.interaction()
-            .map(map)
-            .tilejson(tilejson)
-            .on(wax.tooltip().animate(true).parent(map._container).events());
-
-          if (callback) { callback(); };
-        });
-      }
-
-      initMapboxLayer(routesUrl, function(){
-        initMapboxLayer(stopsUrl)
-      });
-    </script>
-
+    <script src="main.js"></script>
   </body>
 </html>
