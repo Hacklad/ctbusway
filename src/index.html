@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html dir="ltr" lang="en-US" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html dir="ltr" lang="en-US" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html dir="ltr" lang="en-US" class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html dir="ltr" lang="en-US" class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html dir="ltr" lang="en-US"> <!--<![endif]-->
+
+  <head>
+    <meta charset="utf-8">
+    <title>CTfastrak</title>
+    <meta name="description" content="A map of the CTfastrak bus rapid transit route.">
+    <meta name="author" content="OpenPlans">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--  Mobile Viewport Fix -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Place favicon.ico and apple-touch-icon.png in the images folder -->
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png"><!--60X60-->
+
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen, projection" />
+
+    <link href="lib/leaflet-0.4-master/leaflet.css" rel="stylesheet">
+    <!--[if lte IE 8]>
+      <link rel="stylesheet" href="/css/leaflet.ie.css" />
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <header id="branding" role="banner" class="clearfix">
+      <hgroup id="logo">
+        <h1 id="site-title"><span><a href="#" title="CTfastrak BRT Map" rel="home">CTfastrak</a></span></h1>
+        <h2 id="site-description">The CTfastrak Bus Rapid Transit Route</h2>
+      </hgroup>
+
+      <nav id="main-menu" role="article">
+        <a href="#" id="nav-bttn">&equiv;</a>
+        <ul>
+          <li><a href="#">About the Map</a></li>
+          <li><a href="#">CTfastrak Homepage</a></li>
+          <li class="geolocation"><a href="#">Locate me!</a></li>
+        </ul>
+      </nav>
+    </header><!-- #branding -->
+
+    <div id="map"></div>
+
+    <script src="lib/leaflet-0.4-master/leaflet.js"></script>
+    <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
+
+    <script>
+      var baseUrl = 'http://a.tiles.mapbox.com/v3/civicworks.map-akuytyon/{z}/{x}/{y}.png',
+          routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
+          stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
+          map = new L.Map('map', {
+            minZoom: 12,
+            maxZoom: 12,
+            maxBounds: new L.LatLngBounds(
+              new L.LatLng(41.2,-74.2),
+              new L.LatLng(42.3,-71.0)
+            )
+          }),
+          baseLayer = new L.TileLayer(baseUrl, {
+            attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+          });
+
+      map.attributionControl.setPrefix('');
+      map.addLayer(baseLayer).setView(new L.LatLng(41.7159, -72.7319), 12);
+
+      function initMapboxLayer(url, callback) {
+        wax.tilejson(url, function(tilejson) {
+          map.addLayer(new wax.leaf.connector(tilejson));
+
+          wax.leaf.interaction()
+            .map(map)
+            .tilejson(tilejson)
+            .on(wax.tooltip().animate(true).parent(map._container).events());
+
+          if (callback) { callback(); };
+        });
+      }
+
+      initMapboxLayer(routesUrl, function(){
+        initMapboxLayer(stopsUrl)
+      });
+    </script>
+
+  </body>
+</html>
