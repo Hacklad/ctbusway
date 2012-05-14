@@ -69,16 +69,19 @@
       map.locate();
     });
 
-    $('#nav-bttn').click(function(){
+    $('#nav-bttn').click(function(e){
       $('#main-menu').toggleClass('expose');
+      e.preventDefault();
     });
 
-    $('.close-bttn').click(function(){
+    $('.close-bttn').click(function(e){
       $('.dialog').hide();
+      e.preventDefault();
     });
 
-    $('.about a').click(function() {
+    $('.about a').click(function(e) {
       $('#about').show();      
+      e.preventDefault();
     });
   };
 
