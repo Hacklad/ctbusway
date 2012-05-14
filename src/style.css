@@ -369,18 +369,28 @@ a.close-bttn:hover {
 -------------------------------------------------------------- */
 
 .wax-tooltip {
-  z-index:999999;
-  position:absolute;
-  background:#333;
-  color:#fff;
-  padding:10px;
-  -webkit-user-select:auto;
-  left:1em;
-  top:1em;
-  max-width:300px;
+  z-index: 999999;
+  position: absolute;
+  background: #777;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.75em 1.25em;
+  border: 1px solid #eee;
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  -webkit-user-select: auto;
+  left: 1em;
+  top: 1em;
+  max-width: 50%;
   opacity:1;
-  -webkit-transition:opacity 150ms;
-  -moz-transition:opacity 150ms;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+     -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  -webkit-transition: opacity 150ms;
+  -moz-transition: opacity 150ms;
 }
 
 .wax-fade { opacity:0; }
