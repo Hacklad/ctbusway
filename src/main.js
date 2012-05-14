@@ -68,6 +68,10 @@
     $('.geolocation a').click(function() {
       map.locate();
     });
+
+    $('#nav-bttn').click(function(){
+      $('#main-menu').toggleClass('expose');
+    });
   };
 
   initLocation();
