@@ -63,17 +63,21 @@ body, select, input, textarea {
   /* set your base font here, to apply evenly */
   font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
 }
+body {
+  background-color: #eee;
+}
 /* Headers (h1,h2,etc) have no default font-size or margin,
    you'll want to define those yourself. */
 h1,h2,h3,h4,h5,h6 {
   font-weight: bold;
+  margin-bottom: 0.75em
 }
-h1 {}
-h2 {}
-h3 {}
-h4 {}
-h5 {}
-h6 {}
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1.25em; }
 /* always force a scrollbar in non-IE */
 html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
@@ -82,6 +86,7 @@ a, a:active, a:visited { color: #607890; }
 a:hover { color: #036; }
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
+p { margin-bottom: 1.25em; line-height: 1.75; }
 /* Remove margins for navigation lists */
 nav ul, nav li { margin: 0; }
 small { font-size: 85%; }
@@ -167,6 +172,7 @@ button {width: auto; overflow: visible;}
   height: 26px;
   text-indent: -9999px;
   overflow: hidden;
+  margin: 0;
 }
 #site-title a {
   text-decoration: none;
@@ -176,6 +182,7 @@ button {width: auto; overflow: visible;}
   font-size: 1.25em;
   font-weight: normal;
   line-height: 2;
+  margin: 0;
 }
 
 /* Main Menu */
@@ -258,6 +265,47 @@ button {width: auto; overflow: visible;}
 }
 
 
+/* =Dialog Content
+-------------------------------------------------------------- */
+
+#about {
+  display: none;
+  background-color: #f7f7f7;
+  padding: 2em;
+  position: absolute;
+  top: 6em;
+  right: 1em;
+  left: 1em;
+  z-index: 60;
+     -moz-box-shadow: 0 7px 7px rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: 0 7px 7px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 7px 7px rgba(0, 0, 0, 0.25);
+}
+
+/* Close Button */
+a.close-bttn {
+  float: right;
+	background-color: #8cc63e;
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 0.4em 0.23em;
+	position: absolute;
+	top: 1em;
+	right: 1em;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+     -moz-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
+}
+a.close-bttn:hover {
+	background-color: #777;
+}
+
+
 /* =Tooltips
 -------------------------------------------------------------- */
 
@@ -268,8 +316,8 @@ button {width: auto; overflow: visible;}
   color:#fff;
   padding:10px;
   -webkit-user-select:auto;
-  left:10px;
-  top:10px;
+  left:1em;
+  top:1em;
   max-width:300px;
   opacity:1;
   -webkit-transition:opacity 150ms;
@@ -304,6 +352,9 @@ button {width: auto; overflow: visible;}
     clear: none;
     padding: 2.25em 1em 0 0;
     background: transparent;
+       -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
   }
   #main-menu ul {
     display: block;
@@ -348,9 +399,16 @@ button {width: auto; overflow: visible;}
   #main-menu li.geolocation a:hover:before {
     background-position: left bottom;
   }
+  #about {
+    right: 20%;
+    left: 20%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
+  body {
+    font-size: 16px;
+  }
 }
 
 @media only screen and (min-width: 1300px) {
