@@ -81,6 +81,12 @@
 
     $('.about a').click(function(e) {
       $('#about').show();      
+      $('#main-menu').removeClass('expose');
+      e.preventDefault();
+    });
+
+    $('#legend-bttn').click(function(e) {
+      $('#legend').toggleClass('open');      
       e.preventDefault();
     });
   };
