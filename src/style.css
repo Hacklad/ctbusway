@@ -379,7 +379,7 @@ a.close-bttn:hover {
   border-top: 1px solid #fff;
   border-left: 1px solid #fff;
   -webkit-user-select: auto;
-  left: 1em;
+  left: 50px;
   top: 1em;
   max-width: 50%;
   opacity:1;
@@ -456,9 +456,9 @@ a.close-bttn:hover {
     color: #777;
   }
   #main-menu li.geolocation a:before {
-    content: "\0020"; 
+    content: "\0020";
     background: url(images/geolocation.png) left top no-repeat scroll;
-    display: block; 
+    display: block;
     width: 24px;
     height: 40px;
     position: absolute;

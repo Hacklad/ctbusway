@@ -3,13 +3,12 @@
       routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
       stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
       map = new L.Map('map', {
-        minZoom: 12,
-        maxZoom: 12,
+        minZoom: 11,
+        maxZoom: 13,
         maxBounds: new L.LatLngBounds(
           new L.LatLng(41.2,-74.2),
           new L.LatLng(42.3,-71.0)
-        ),
-        zoomControl: false
+        )
       }),
       baseLayer = new L.TileLayer(baseUrl, {
         attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
@@ -80,13 +79,13 @@
     });
 
     $('.about a').click(function(e) {
-      $('#about').show();      
+      $('#about').show();
       $('#main-menu').removeClass('expose');
       e.preventDefault();
     });
 
     $('#legend-bttn').click(function(e) {
-      $('#legend').toggleClass('open');      
+      $('#legend').toggleClass('open');
       e.preventDefault();
     });
   };
