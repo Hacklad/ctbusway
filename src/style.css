@@ -83,7 +83,7 @@ html { overflow-y: scroll; }
 /* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
 a:hover, a:active { outline: none; }
 a, a:active, a:visited { color: #68942e; }
-a:hover { color: #8cc63e; }
+a:hover { color: #8cc63f; }
 ul, ol { margin-left: 1.8em; }
 ol { list-style-type: decimal; }
 p { margin-bottom: 1.25em; line-height: 1.75; }
@@ -151,9 +151,11 @@ button {width: auto; overflow: visible;}
 -------------------------------------------------------------- */
 
 #branding {
-  background-color: #fff;
+  background-color: #191919;
+  color: #fff;
   margin: 0;
   padding: 0;
+  border-bottom: 1em solid #8cc63f;
   height: 6em;
   position: relative;
   z-index: 100;
@@ -168,19 +170,18 @@ button {width: auto; overflow: visible;}
 }
 #site-title {
   background: url(images/ctfastrack.png) 0 0 no-repeat scroll;
-  width: 178px;
-  height: 26px;
+  width: 180px;
+  height: 25px;
   overflow: hidden;
   margin: 0;
 }
 #site-title a {
   display: block;
-  width: 178px;
-  height: 26px;
+  width: 180px;
+  height: 25px;
   text-indent: -9999px;
 }
 #site-description {
-	color: #777;
   font-size: 1.25em;
   font-weight: normal;
   line-height: 2;
@@ -190,7 +191,7 @@ button {width: auto; overflow: visible;}
 /* Main Menu */
 #main-menu {
   clear: both;
-  background-color: #fff;
+  background-color: #191919;
 	margin: 0;
 	padding: 0;
   text-align: center;
@@ -201,8 +202,8 @@ button {width: auto; overflow: visible;}
 #main-menu #nav-bttn {
   font-size: 2em;
   line-height: 1;
-	background: #777;
-	color: #fff;
+	background: #555;
+	color: #ddd;
 	text-decoration: none;
 	text-align: center;
 	padding: 0.125em 0.4em;
@@ -213,7 +214,8 @@ button {width: auto; overflow: visible;}
   right: 0.875em;
 }
 #main-menu #nav-bttn:hover {
-	background: #8cc63e;
+	background: #8cc63f;
+	color: #fff;
 }
 #main-menu ul {
 	list-style: none;
@@ -227,6 +229,7 @@ button {width: auto; overflow: visible;}
 }
 #main-menu.expose ul {
   display: block;
+  border-bottom: 1em solid #8cc63f;
 }
 #main-menu li {
 	position: relative;
@@ -237,7 +240,7 @@ button {width: auto; overflow: visible;}
 }
 #main-menu a {
   display: block;
-	background-color: #8cc63e;
+	background-color: #555;
 	color: #fff;
 	font-weight: bold;
 	text-decoration: none;
@@ -250,7 +253,7 @@ button {width: auto; overflow: visible;}
           box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
 }
 #main-menu a:hover {
-	background-color: #777;
+	background-color: #8cc63f;
 }
 
 
@@ -259,7 +262,7 @@ button {width: auto; overflow: visible;}
 
 #map {
   position: absolute;
-  top: 6em;
+  top: 7em;
   bottom: 0;
   right: 0;
   left: 0;
@@ -429,6 +432,9 @@ a.close-bttn:hover {
     display: block;
     font-size: 1em;
   }
+  #main-menu.expose ul {
+    border-bottom: 0;
+  }
   #main-menu li {
     float: none;
     display: inline;
@@ -444,7 +450,7 @@ a.close-bttn:hover {
   }
   #main-menu li.geolocation a {
     background-color: transparent;
-    color: #8cc63e;
+    color: #fff;
     padding-left: 20px;
     margin-left: 20px;
     position: relative;
@@ -453,11 +459,11 @@ a.close-bttn:hover {
             box-shadow: none;
   }
   #main-menu li.geolocation a:hover {
-    color: #777;
+    color: #8cc63f;
   }
   #main-menu li.geolocation a:before {
     content: "\0020"; 
-    background: url(images/geolocation.png) left top no-repeat scroll;
+    background: url(images/geolocation.png) left bottom no-repeat scroll;
     display: block; 
     width: 24px;
     height: 40px;
@@ -466,7 +472,7 @@ a.close-bttn:hover {
     left: 0;
   }
   #main-menu li.geolocation a:hover:before {
-    background-position: left bottom;
+    background-position: left top;
   }
   #about {
     right: 20%;
