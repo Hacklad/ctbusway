@@ -348,7 +348,8 @@ a.close-bttn:hover {
 /* =Tooltips
 -------------------------------------------------------------- */
 
-.wax-tooltip {
+.tooltip {
+  display: none;
   z-index: 999999;
   position: absolute;
   background: #777;
@@ -360,7 +361,7 @@ a.close-bttn:hover {
   border-left: 1px solid #fff;
   -webkit-user-select: auto;
   left: 50px;
-  top: 1em;
+  top: 120px;
   max-width: 50%;
   opacity:1;
   -webkit-border-radius: 4px;
@@ -371,15 +372,6 @@ a.close-bttn:hover {
           box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
   -webkit-transition: opacity 150ms;
   -moz-transition: opacity 150ms;
-}
-
-.wax-fade { opacity:0; }
-
-.wax-tooltip .close {
-  display:block;
-  position:absolute;
-  top:0px;
-  right:0px;
 }
 
 
@@ -439,9 +431,15 @@ a.close-bttn:hover {
     color: #fff;
   }
   #main-menu li.geolocation a:before {
+<<<<<<< HEAD
     content: "\0020"; 
     background: url(images/geolocation.png) left top no-repeat scroll;
     display: block; 
+=======
+    content: "\0020";
+    background: url(images/geolocation.png) left bottom no-repeat scroll;
+    display: block;
+>>>>>>> 7cdc0f1ec856bb1d292603a5d76781c5b09a7714
     width: 24px;
     height: 40px;
     position: absolute;

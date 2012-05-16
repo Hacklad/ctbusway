@@ -16,11 +16,10 @@
     marker-line-opacity:0.0;
   }
   
-  [zoom = 12] { marker-width:1.5; }
-  [zoom = 13] { marker-width:1.75; }
-  [zoom > 14] { marker-width:2; }
+  [zoom = 12] { marker-width:2.5; }
+  [zoom >= 13] { marker-width:3; }
   
-  marker-width:1.25;
+  marker-width:2;
   marker-fill:@default;
   marker-line-color:@default;
   marker-allow-overlap:true;
@@ -36,14 +35,20 @@
   marker-line-color:@metro_north;
 }
 
-.stops [type='busway'] { 
-  [zoom = 12] { marker-width:4.5; }
-  [zoom = 13] { marker-width:4.75; }
-  [zoom >= 14] { marker-width:5; }
+.stops[type='busway'] {   
+  [zoom = 12] { 
+    marker-width:14; 
+    marker-line-width:2;
+  }
+  [zoom >= 13] { 
+    marker-width:16; 
+    marker-line-width:3;
+  }
 
-  marker-width:4;
+  marker-width:8;
   marker-fill:@busway;
-  marker-line-color:darken(@busway, 30%);
-  marker-line-width:1;
-  marker-line-opacity:0.8
+  marker-line-color:#fff;
+  marker-opacity:1;
+  marker-line-width:1.5;
+  marker-line-opacity:0.9
 }

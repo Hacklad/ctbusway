@@ -48,6 +48,12 @@
       </nav>
     </header><!-- #branding -->
 
+
+      <div class="tooltip">
+        <div class="stops-tooltip"></div>
+        <div class="routes-tooltip"></div>
+      </div>
+
     <div id="map"></div>
 
     <div id="about" class="dialog">
@@ -59,17 +65,20 @@
 
     <div id="legend">
       <ul id="legend-content">
-        <li>--- Chartreuse Line</li>
-        <li>--- Malachite Line</li>
-        <li>--- Fallow Line</li>
-        <li>--- Gamboge Line</li>
-        <li>--- Feldgrau Line</li>
+        <li>&mdash;&mdash; Busway Local</li>
+        <li>&mdash;&mdash; Express Bus</li>
+        <li>&mdash;&mdash; Hartford Local Bus</li>
+        <li>&mdash;&mdash; New Britain Local Bus</li>
+        <li>&mdash;&mdash; Connector / Circulator Bus</li>
+        <li>&mdash;&mdash; Amtrak</li>
+        <li>&mdash;&mdash; Metro-North Railroad</li>
       </ul>
     </div>
 
     <script src="lib/jquery-1.7.2.min.js"></script>
     <script src="lib/leaflet-0.3.1/leaflet.js"></script>
     <script src="lib/wax-6.0b5/wax.leaf.min.js"></script>
+    <script src="route-details.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

@@ -49,6 +49,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "routes"
+    },
+    {
+      "geometry": "point",
+      "id": "busway",
+      "class": "stops",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Busway_Stops.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "busway"
     }
   ],
   "name": "CT Busway Routes",
