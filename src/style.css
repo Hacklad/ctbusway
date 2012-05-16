@@ -354,7 +354,6 @@ a.close-bttn:hover {
   position: absolute;
   background: #777;
   color: #fff;
-  font-weight: bold;
   padding: 0.75em 1.25em;
   border: 1px solid #eee;
   border-top: 1px solid #fff;
@@ -372,6 +371,19 @@ a.close-bttn:hover {
           box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.1);
   -webkit-transition: opacity 150ms;
   -moz-transition: opacity 150ms;
+}
+
+.tooltip-title {
+  font-weight: bold;
+}
+
+.tooltip-description {
+  margin-top:0.5em;
+  font-size:0.8em;
+}
+
+.stops-tooltip {
+  margin-bottom:0.5em;
 }
 
 
@@ -432,9 +444,9 @@ a.close-bttn:hover {
   }
   #main-menu li.geolocation a:before {
 <<<<<<< HEAD
-    content: "\0020"; 
+    content: "\0020";
     background: url(images/geolocation.png) left top no-repeat scroll;
-    display: block; 
+    display: block;
 =======
     content: "\0020";
     background: url(images/geolocation.png) left bottom no-repeat scroll;

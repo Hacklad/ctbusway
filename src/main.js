@@ -34,8 +34,8 @@
           },
           off: function(evt) {
             $('.' + type + '-tooltip').hide();
-
             if($tooltip.children().is(':visible') === false) {
+
               $tooltip.hide();
             }
           }
@@ -101,7 +101,9 @@
   };
 
   var formatStops = function(data) {
-    return '<h3>' + data.name + '</h3>';
+    return ich.stopsTooltip({
+      'title': data.name
+    });
   };
 
   var formatRoutes = function(data) {
@@ -141,7 +143,7 @@
         ],
         rushHour, minuteArray, other, min, max, headway,
         // Default display html
-        html = '<h3>' + data.name + '</h3>';
+        desc = '';
 
     // Not everything has additional route data
     if (routeData) {
@@ -153,42 +155,44 @@
       max = Math.max.apply(null, minuteArray);
 
       if (min === -Infinity || min === Infinity) {
-          // Not all busways have off-peak times.
-          other = '';
+        // Not all busways have off-peak times.
+        other = '';
+      } else {
+        // Support ranges for non-peak headways
+        if (min === max) {
+          other = 'every ' + max;
+        } else  {
+          other = 'between ' + min + ' and ' + max;
+        }
       }
-      else {
-          // Support ranges for non-peak headways
-          if (min === max) {
-              other = 'every ' + max;
-          } else  {
-              other = 'between ' + min + ' and ' + max;
-          }
-      };
       // Tailor the output string to several combinations of times:
       if (min === max && max === rushHour) {
-         // Peak and nonpeak times are the same.
-         html += 'Runs every ' + rushHour + ' minutes.';
+        // Peak and nonpeak times are the same.
+        desc += 'Runs every ' + rushHour + ' minutes.';
       } else if (isNaN(rushHour)) {
-         // There are no peak times.
-         if (min === max) {
-            html += 'Runs every ' + min + ' minutes at off-peak times.';
-	 } else {
-            html += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
-         };
+        // There are no peak times.
+        if (min === max) {
+          desc += 'Runs every ' + min + ' minutes at off-peak times.';
+        } else {
+          desc += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
+        }
       } else {
-         // There are peak times...
-         html += 'Runs every ' + rushHour + ' minutes during rush hour';
-         if (other === '') {
-             // ... but no offpeak.
-             html += '.';
-         } else {
-             // ... with off-peak times also.
-             html += ' and ' + other + ' minutes at other times.';
-	 }
+        // There are peak times...
+        desc += 'Runs every ' + rushHour + ' minutes during rush hour';
+        if (other === '') {
+          // ... but no offpeak.
+          desc += '.';
+        } else {
+          // ... with off-peak times also.
+          desc += ' and ' + other + ' minutes at other times.';
+        }
       }
     }
 
-    return html;
+    return ich.routesTooltip({
+      'title': data.name,
+      'description': desc
+    });
   };
 
   initLocation();
