@@ -152,24 +152,44 @@
     if (routeData) {
       // Get the rush hours, assuming AM and PM are the samefor simplicity
       rushHour = parseInt(routeData['Weekday AM Peak'], 10),
-      minuteArray = getMinutes(otherKeys, routeData),
-
       // Get the min and max for non rush hour headways
+      minuteArray = getMinutes(otherKeys, routeData),
       min = Math.min.apply(null, minuteArray);
       max = Math.max.apply(null, minuteArray);
 
-      // Support ranges for non-peak headways
-      if (min === max) {
-        other = 'every ' + max;
-      } else  {
-        other = 'between ' + min + ' and ' + max;
+      if (min === -Infinity || min === Infinity) {
+          // Not all busways have off-peak times.
+          other = '';
       }
-
-      // Better English when peak and nonpeak times are the same
+      else {
+          // Support ranges for non-peak headways
+          if (min === max) {
+              other = 'every ' + max;
+          } else  {
+              other = 'between ' + min + ' and ' + max;
+          }
+      };
+      // Tailor the output string to several combinations of times:
       if (min === max && max === rushHour) {
+         // Peak and nonpeak times are the same.
          html += 'Runs every ' + rushHour + ' minutes.';
+      } else if (rushHour === Infinity || rushHour === -Infinity) {
+         // There are no peak times.
+         if (min === max) {
+            html += 'Runs every ' + min + 'minutes at off-peak times';
+	 } else {
+            html += 'Runs between ' + min + 'and' + max + 'minutes at off-peak times.';
+         };
       } else {
-        html += 'Runs every ' + rushHour + ' minutes during rush hour and ' + other + ' minutes at other times.';
+         // There are peak times...
+         html += 'Runs every ' + rushHour + ' minutes during rush hour';
+         if (other === '') {
+             // ... but no offpeak.
+             html += '.';
+         } else {
+             // ... with off-peak times also.
+             html += ' and ' + other + ' minutes at other times.';
+	 }
       }
     }
 
