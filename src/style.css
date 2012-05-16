@@ -363,6 +363,10 @@ a.close-bttn:hover {
   display: none;
   padding: 0.5em 1em;
 }
+#legend-content li {
+  list-style-type: none;
+}
+
 #legend.open #legend-content {
   display: block;
 }
