@@ -1,3 +1,5 @@
 .DS_Store
 .thumb.png
 tilemill/layers/
+tilemill/ctbusway_routes/layers/
+tilemill/ctbusway_stops/layers/
