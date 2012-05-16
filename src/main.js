@@ -173,12 +173,12 @@
       if (min === max && max === rushHour) {
          // Peak and nonpeak times are the same.
          html += 'Runs every ' + rushHour + ' minutes.';
-      } else if (rushHour === Infinity || rushHour === -Infinity) {
+      } else if (isNaN(rushHour)) {
          // There are no peak times.
          if (min === max) {
-            html += 'Runs every ' + min + 'minutes at off-peak times';
+            html += 'Runs every ' + min + ' minutes at off-peak times.';
 	 } else {
-            html += 'Runs between ' + min + 'and' + max + 'minutes at off-peak times.';
+            html += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
          };
       } else {
          // There are peak times...
