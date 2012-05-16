@@ -20,6 +20,7 @@
 
   var initMapboxLayer = function(url, type, formatter, callback) {
     wax.tilejson(url, function(tilejson) {
+      var tid;
       map.addLayer(new wax.leaf.connector(tilejson));
 
       wax.leaf.interaction()
@@ -29,15 +30,25 @@
           on: function(evt) {
             var html = formatter ? formatter(evt.data) : evt.data.name;
 
+            if (tid) {
+              clearTimeout(tid);
+            }
+
             $('.' + type + '-tooltip').html(html).show();
             $tooltip.show();
           },
           off: function(evt) {
-            $('.' + type + '-tooltip').hide();
-            if($tooltip.children().is(':visible') === false) {
-
-              $tooltip.hide();
+            if (tid) {
+              clearTimeout(tid);
             }
+
+            tid = setTimeout(function(){
+              $('.' + type + '-tooltip').hide();
+              if($tooltip.children().is(':visible') === false) {
+
+                $tooltip.hide();
+              }
+            }, 300);
           }
         });
 
