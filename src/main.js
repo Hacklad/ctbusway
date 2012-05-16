@@ -83,11 +83,6 @@
       $('#main-menu').removeClass('expose');
       e.preventDefault();
     });
-
-    $('#legend-bttn').click(function(e) {
-      $('#legend').toggleClass('open');
-      e.preventDefault();
-    });
   };
 
   initLocation();
