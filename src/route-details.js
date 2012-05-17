@@ -416,7 +416,7 @@ var routeDetails = {
     "Sunday Evening": ""
   },
 
-  "Combined South and East Street": {
+  "Combined South and East Streets": {
     "Service Pattern": "All trips operate in local transit service between Corbin Russwin and New Britain station and on to East Street making all local stops.",
     "One Way Mileage": "7.6 miles",
     "One Way Travel Time": "30 minutes",
