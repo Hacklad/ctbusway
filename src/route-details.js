@@ -76,6 +76,7 @@ var routeDetails = {
     "One Way Travel Time": "70 minutes",
     "One Way Mileage": "34.4 miles",
     "Service Pattern": "All trips operate from the Waterbury train station via the transit center, Exit 23 park and ride, Plantsville park and ride, New Britain station, Sigourney Street station and then via the downtown Hartford express bus loop (Farmington, Asylum, Main, Capitol) making all local stops when on-street. The loop would be operated clockwise in the morning and counterclockwise in the afternoon.",
+    "stops": ["New Britain", "Sigourney Street", "Union Station"],
     "Service Span": "This route will operate only on weekdays during AM and PM peak periods, from 6am to 9am and from 3pm to 6pm.",
     "Weekday AM Peak": "30",
     "Weekday Midday": "",
@@ -96,6 +97,7 @@ var routeDetails = {
     "One Way Travel Time": "56 minutes",
     "Service Span": "This route will operate only on weekdays during AM and PM peak periods, from 6am to 9am and from 3pm to 6pm.",
     "Service Pattern": "All trips operate from the Exit 26 park-and-ride, Plantsville park-and-ride, New Britain station, Sigourney Street station and then via the downtown Hartford express bus loop (Farmington, Asylum, Main, Capitol) making all local stops when on-street. The loop would be operated clockwise in the morning and counterclockwise in the afternoon.",
+    "stops": ["New Britain", "Sigourney Street", "Union Station"],
     "Weekday AM Peak": "30",
     "Weekday Midday": "",
     "Weekday PM Peak": "30",
@@ -113,6 +115,7 @@ var routeDetails = {
     "One Way Mileage": "34.4 miles",
     "One Way Travel Time": "70 minutes",
     "Service Pattern": "All trips operate between Waterbury, Exit 23 park-and-ride, Exit 26 park-and-ride, Plantsville park-and-ride, New Britain station, Sigourney Street station and then via the downtown Hartford express bus loop (Farmington, Asylum, Main, Capitol) making all local stops when on-street. The loop would be operated clockwise in the morning and counterclockwise in the afternoon and evening.",
+    "stops": ["New Britain", "Sigourney Street", "Union Station"],
     "Service Span": "This route will operate only during off-peak periods Monday through Sunday.",
     "Weekday AM Peak": "",
     "Weekday Midday": "60",
@@ -130,6 +133,7 @@ var routeDetails = {
 
   "West Hartford Place via Park": {
     "Service Pattern": "All trips operate in local transit service from West Hartford Place mall to downtown Hartford making all local stops.",
+    "stops": ["Park Street"],
     "One Way Travel Time": "25 minutes",
     "One Way Mileage": "3.8 miles",
     "Service Span": "Seven days a week, 18 hours a day on Monday to Saturday (6am to Midnight) and 12 hours (8 am to 8pm) on Sundays.",
@@ -150,6 +154,7 @@ var routeDetails = {
 
   "West Hartford Place via Park and Kane St": {
     "Service Pattern": "All trips operate in local transit service between West Hartford Place mall and downtown Hartford making all local stops.",
+    "stops": ["Park Street"],
     "One Way Travel Time": "29 minutes",
     "One Way Mileage": "4.1 miles",
     "Service Span": "This service operates only during midday periods only (9am - 3pm) Monday through Friday.",
@@ -170,6 +175,7 @@ var routeDetails = {
 
   "Westfarms via Park": {
     "Service Pattern": "All trips operate in local transit service between Westfarms Mall and downtown Hartford making all local stops.",
+    "stops": ["Park Street"],
     "One Way Travel Time": "50 minutes",
     "One Way Mileage": "7.1 miles",
     "Service Span": "This route operates Monday through Saturday from 6am to 6pm.",
@@ -189,6 +195,7 @@ var routeDetails = {
 
   "Hartford Newington Local": {
     "Service Pattern": "All trips operate in local transit service between Newington and Hartford making all local stops.",
+    "stops": [],
     "One Way Travel Time": "30 minutes",
     "One Way Mileage": "6.5 miles",
     "Service Span": "Seven days a week, 18 hours a day on Monday to Saturday (6am to Midnight) and 12 hours (8am to 8pm) on Sundays.",
@@ -206,9 +213,9 @@ var routeDetails = {
     "Sunday Evening": ""
   },
 
-
   "Charter Oak Marketplace West Hartford Place via NB Ave": {
     "Service Pattern": "All trips operate in local transit service between West Hartford Place mall and downtown Hartford making all local stops.",
+    "stops": [],
     "One Way Travel Time": "39 minutes",
     "One Way Mileage": "5.2 miles",
     "Service Span": "Seven days a week, 18 hours a day on Monday to Saturday (6am to Midnight) and 12 hours (8am to 8pm) on Sundays.",
@@ -228,6 +235,7 @@ var routeDetails = {
 
   "Elmwood via New Britain Ave": {
     "Service Pattern": "All trips operate in local transit service between Elmwood and downtown Hartford making all local stops.",
+    "stops": [],
     "One Way Travel Time": "34 minutes",
     "One Way Mileage": "4.9 miles",
     "Service Span": "Seven days a week, 18 hours a day on Monday to Saturday (6am to Midnight) and 12 hours (8am to 8pm) on Sundays.",
@@ -248,6 +256,7 @@ var routeDetails = {
 
   "Capitol - Berlin Turnpike via Willard": {
     "Service Pattern": "All trips operate in local transit service between Berlin Turnpike and downtown Hartford making all local stops.",
+    "stops": [],
     "One Way Travel Time": "41 minutes",
     "One Way Mileage": "11.9 miles",
     "Service Span": "Monday through Saturday from 6am to 6pm. No service during evenings and on Sundays.",
@@ -439,6 +448,7 @@ var routeDetails = {
     "One Way Travel Time": "28 minutes",
     "One Way Mileage": "10.1 miles",
     "Service Pattern": "This route will make all local station stops along its route including: New Britain, East Main, East Street, Cedar Street, Newington Jct., Elmwood, Flatbush Avenue, Kane Street, Park Street, Sigourney Street, Union Station and in downtown Hartford, Ann Street, Trumbull Street and Main Street. The route will travel exclusively on the busway except for the downtown loop from Union Station to Main Street.",
+    "stops": ["New Britain", "East Main", "East Street", "Cedar Street", "Newington Junction", "Elmwood", "Flatbush Avenue", "Kane Street", "Park Street", "Sigourney Street", "Union Station"],
     "Service Span": "Seven days a week, 18 hours a day on Monday to Saturday (6am to Midnitght) and 12 hours (8am to 8pm) on Sundays.",
     "Weekday AM Peak": "12",
     "Weekday Midday": "20",
@@ -529,3 +539,4 @@ var routeDetails = {
     "Sunday Evening": ""
   }
 };
+
