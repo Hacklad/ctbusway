@@ -528,4 +528,4 @@ var routeDetails = {
     "Sunday PM Peak": "",
     "Sunday Evening": ""
   }
-}
+};
