@@ -64,7 +64,7 @@
       "Datasource": {
         "file": "http://ctbusway.s3.amazonaws.com/shp/stops.zip",
         "id": "stops",
-        "project": "ctbusway_style",
+        "project": "ctbusway_stops",
         "srs": null
       },
       "srs-name": "autodetect",

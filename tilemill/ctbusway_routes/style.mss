@@ -1,13 +1,16 @@
 @boundary:#999;
 @busway:saturate(#8CC63F, 20%);
-@express_bus:#E41A1C;
-@busway_local:#984EA3;
-@local_feeder_bus:#FF7F00;
-@connector_circulator_bus:#4DAF4A;
 
-@amtrak:#377EB8;
-@metro_north:#A65628;
-@default:#999;
+@express_bus:#084594; //377EB8;
+
+@local_feeder_bus:#9ECAE1; //FF7F00
+
+// Proposed New Local Bus Routes
+@busway_local:#FF7F00; //984EA3;
+@connector_circulator_bus:#FF7F00; //4DAF4A;
+
+@amtrak:#E41A1C;
+@metro_north:#238B45;
 
 #towns {
   line-color:@boundary;
@@ -21,10 +24,10 @@
     line-opacity:0.0;
   }
  
-  [zoom = 12] { line-width:2;}
-  [zoom >= 13] { line-width:3;}
+  [zoom = 12] { line-width:1.5;}
+  [zoom >= 13] { line-width:2;}
 
-  line-width:1.3;
+  line-width:1;
   line-opacity:0.8;
 }
 
@@ -69,29 +72,29 @@
     line-width:10;
   }
   
-  line-width:10;
-  /* line-color:@busway; */
+  line-width:1;
   line-color:transparent;
   line-pattern-file:url('img/express_local_1.png');
   
   [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
 }
+
 /*
 #busway {
   [zoom = 12] { 
-    marker-width:14; 
-    marker-line-width:2;
+    marker-width:8; 
+    marker-line-width:1.6;
   }
   [zoom >= 13] { 
-    marker-width:16; 
-    marker-line-width:3;
+    marker-width:10; 
+    marker-line-width:2.0;
   }
 
-  marker-width:8;
-  marker-fill:@busway;
+  marker-width:6;
+  marker-fill:#c7ef92;
   marker-line-color:#fff;
   marker-opacity:1;
-  marker-line-width:1.5;
+  marker-line-width:1.2;
   marker-line-opacity:0.9
 }
 */
