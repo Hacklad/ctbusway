@@ -492,7 +492,7 @@ var routeDetails = {
     "Sunday PM Peak": "",
     "Sunday Evening": ""
   },
-  "BW4 UConn Health Center-Westfarms-Hartford": {
+  "BW4 UConn Health-Westfarms-Hartford": {
     "One Way Travel Time": "43 minutes",
     "One Way Mileage": "9.1 miles",
     "Service Pattern": "This route will stop at all local bus stops along its route from UConn Health Center to Westfarms and then through Elmwood to the busway. After it enters the busway at Oakwood, it will make all local busway stops at Flatbush, Kane Street, Park Street, Sigourney Street, and Union Station. On-street in downtown Hartford it will stop at Anne, Trumbull, and Main Streets.",
