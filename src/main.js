@@ -6,8 +6,8 @@
         minZoom: 11,
         maxZoom: 13,
         maxBounds: new L.LatLngBounds(
-          new L.LatLng(41.2,-74.2),
-          new L.LatLng(42.3,-71.0)
+          new L.LatLng(41.5,-73.2),
+          new L.LatLng(42.0,-72.1)
         )
       }),
       baseLayer = new L.TileLayer(baseUrl, {
