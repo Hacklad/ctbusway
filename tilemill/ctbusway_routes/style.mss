@@ -1,6 +1,6 @@
 @boundary:#999;
 @busway:saturate(#8CC63F, 20%);
-
+// Express Bus
 @express_bus:#084594; //377EB8;
 
 @local_feeder_bus:#9ECAE1; //FF7F00
@@ -16,6 +16,14 @@
   line-color:@boundary;
   line-dasharray:1,2;
   line-width:0.5;
+  text-name:'[NAME10]';
+  text-face-name:'Arial Regular';
+  
+  [NAME10='Hartford'] {
+    [zoom = 11] { text-dx:18; text-dy:-15; }
+    [zoom = 12] { text-dx:30; text-dy:-25; }
+    [zoom = 13] { text-dx:50; text-dy:-45; }
+  }
 }
 
 .routes {

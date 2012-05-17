@@ -30,7 +30,10 @@
       "id": "towns",
       "class": "boundaries",
       "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/shp/townct_37800_0000_2010_s100_census_1_shp_nad83_feet.zip"
+        "file": "http://ctbusway.s3.amazonaws.com/shp/townct_37800_0000_2010_s100_census_1_shp_nad83_feet.zip",
+        "id": "towns",
+        "project": "ctbusway_routes",
+        "srs": null
       },
       "srs-name": "autodetect",
       "srs": "",
