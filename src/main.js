@@ -1,5 +1,5 @@
 (function(routeDetails){
-    var baseUrl = 'http://{s}.tiles.mapbox.com/v3/civicworks.map-akuytyon/{z}/{x}/{y}.png',
+    var baseUrl = 'http://{s}.tile.cloudmade.com/d253021886024e50adec434f02cbf0b5/62952/256/{z}/{x}/{y}.png',
       routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
       stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
       map = new L.Map('map', {
@@ -11,7 +11,7 @@
         )
       }),
       baseLayer = new L.TileLayer(baseUrl, {
-        attribution: 'Map data &copy; OpenStreetMap contributors, CC-BY-SA <a href="http://mapbox.com/about/maps" target="_blank">Terms &amp; Feedback</a>'
+        attribution: 'Map data <a target="_blank" href="http://creativecommons.org/licenses/by-sa/2.0/">CCBYSA</a> 2012 <a target="_blank" href="http://openstreetmap.org">OpenStreetMap.org</a> contributors - <a target="_blank" href="http://cloudmade.com/terms_conditions">Terms of Use</a>'
       }),
       $tooltip = $('.tooltip');
 
