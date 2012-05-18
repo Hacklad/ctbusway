@@ -11,36 +11,19 @@
       "agency": "",
       "name": "%(ROUTE_NAME)s",
       "whitelist": {
-	  "ROUTE_NAME": [
-	      "Arch Street",
-              "BW1 New Britain to Hartford Shuttle",
-	      "BW2 Bristol to Hartford Shuttle",
-	      "BW3 New Britain-Westfarms-Hartford",
-	      "BW4 UConn Health-Westfarms-Hartford",
-	      "BW5 Newington Junction to Hartford Shuttle",
-	      "BX1 Waterbury Express",
-	      "BX2 Cheshire Express",
-	      "Berlin Turnpike (Cromwell)",
-	      "Berlin Turnpike",
-	      "Burritt Street",
-	      "C1 CCSU Connector",
-	      "C2 Hospitals - Capitol Connector",
-	      "C3 Newington Circulator",
-	      "C4 West Hartford - Bishops Corner Connector",
-	      "Capitol - Berlin Turnpike via Willard",
-	      "Charter Oak Marketplace West Hartford Place via NB Ave",
-	      "Combined South and East Streets",
-	      "Corbin Avenue",
-	      "Elmwood via New Britain Ave",
-	      "Farmington Avenue",
-	      "Hartford Newington Local",
-	      "Oak Street",
-	      "Park Rd and S Quaker via Park",
-	      "Plainville/Bristol",
-	      "West Hartford Place via Park and Kane St",
-	      "West Hartford Place via Park",
-	      "Westfarms via Park"
-	  ]
+      "ROUTE_NAME": [
+          "BW1 New Britain to Hartford Shuttle",
+          "BW2 Bristol to Hartford Shuttle",
+          "BW3 New Britain-Westfarms-Hartford",
+          "BW4 UConn Health-Westfarms-Hartford",
+          "BW5 Newington Junction to Hartford Shuttle",
+          "BX1 Waterbury Express",
+          "BX2 Cheshire Express",
+          "C1 CCSU Connector",
+          "C2 Hospitals - Capitol Connector",
+          "C3 Newington Circulator",
+          "C4 West Hartford - Bishops Corner Connector"
+      ]
       }
     },
     "amtrak_ct": {
