@@ -1,28 +1,63 @@
-@boundary:#999;
+@boundary:#454545;
 @busway:saturate(#8CC63F, 20%);
 // Express Bus
-@express_bus:#084594; //377EB8;
+@express_bus:#084594;
 
-@local_feeder_bus:#9ECAE1; //FF7F00
+@local_feeder_bus:#9ECAE1;
 
 // Proposed New Local Bus Routes
-@busway_local:#FF7F00; //984EA3;
+@busway_local:#FF7F00;
 @connector_circulator_bus:#FF7F00; //4DAF4A;
 
 @amtrak:#E41A1C;
 @metro_north:#238B45;
 
+@texthalo: #f1f1f1;
+@text: #444;
+@importanttextsize:14;
+
 #towns {
   line-color:@boundary;
   line-dasharray:1,2;
   line-width:0.5;
+  line-opacity:0.5;
+  
   text-name:'[NAME10]';
-  text-face-name:'Arial Regular';
+  text-face-name:'Helvetica Neue Medium';
+  text-fill:@text;
+  text-character-spacing: 0.5;
+  text-halo-fill:@texthalo;
+  text-halo-radius:2;
+  text-size:10;
   
   [NAME10='Hartford'] {
-    [zoom = 11] { text-dx:18; text-dy:-15; }
+    text-size:@importanttextsize;
+    [zoom = 11] { text-dx:17; text-dy:-12; }
     [zoom = 12] { text-dx:30; text-dy:-25; }
     [zoom = 13] { text-dx:50; text-dy:-45; }
+  }
+
+  [NAME10='Waterbury'] {
+    text-size:@importanttextsize;
+  }
+
+  [NAME10='New Britain'] {
+    text-size:@importanttextsize;
+    text-horizontal-alignment:left;
+    [zoom = 11] { text-dx:15; }
+  }
+
+  [NAME10='New Haven'] {
+    text-size:@importanttextsize;
+  }
+  
+  [NAME10='Meriden'] {
+    [zoom = 11] { text-dx:5; }
+  }
+
+  [NAME10='Berlin'] {
+    text-horizontal-alignment:left;
+    [zoom = 11] { text-dx:5; }
   }
 }
 
@@ -36,7 +71,7 @@
   [zoom >= 13] { line-width:2;}
 
   line-width:1;
-  line-opacity:0.8;
+  line-opacity:1;
 }
 
 .routes [type='local_feeder_bus'] {
@@ -55,8 +90,15 @@
 }
 
 .routes [type='express_bus'] {
+
+  [name='BX2 Cheshire Express'] {
+    line-dasharray: 4,8;
+    line-width:2;
+    line-color:#fff;
+  }
   /* all busway */
   line-color:@express_bus;
+
 }
 
 .routes [type='amtrak'] {

@@ -1,4 +1,4 @@
-{ 
+{
   "geomtype": "MultiLineString",
   "shps": {
     "Busway": {
@@ -6,7 +6,7 @@
       "agency": "",
       "name": "CTfastrak Busway"
     },
-    "ALL_ROUTES": {
+    "ALL_ROUTES_TWEAKED_1337272551": {
       "type": "ALL ROUTES TYPE",
       "agency": "",
       "name": "%(ROUTE_NAME)s",
@@ -48,10 +48,10 @@
       "agency": "",
       "name": "Amtrak"
     },
-    "mnrrroutes_100413": {
+    "metro_north_ct_only_rail_tweaked_1337272867": {
       "type": "metro_north",
-      "agency": "Metro-North",
-      "name": "%(route_long)s"
+      "agency": "",
+      "name": "Metro-North"
     }
   }
 }

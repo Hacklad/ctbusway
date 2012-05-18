@@ -26,20 +26,6 @@
   ],
   "Layer": [
     {
-      "geometry": "polygon",
-      "id": "towns",
-      "class": "boundaries",
-      "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/shp/townct_37800_0000_2010_s100_census_1_shp_nad83_feet.zip",
-        "id": "towns",
-        "project": "ctbusway_routes",
-        "srs": null
-      },
-      "srs-name": "autodetect",
-      "srs": "",
-      "name": "towns"
-    },
-    {
       "geometry": "linestring",
       "id": "routes",
       "class": "routes",
@@ -63,6 +49,20 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "busway"
+    },
+    {
+      "geometry": "polygon",
+      "id": "towns",
+      "class": "boundaries",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/townct_37800_0000_2010_s100_census_1_shp_nad83_feet.zip",
+        "id": "towns",
+        "project": "ctbusway_routes",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "towns"
     }
   ],
   "name": "CT Busway Routes",
