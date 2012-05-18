@@ -109,6 +109,11 @@
       $('#main-menu').removeClass('expose');
       e.preventDefault();
     });
+
+    $('#legend-bttn').click(function(e){
+      $('#legend').toggleClass('expose');
+      e.preventDefault();
+    });
   };
 
   // For sorting routes alphabetically, but BW first, then BX, then C, then other.
