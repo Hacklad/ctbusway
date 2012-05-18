@@ -464,15 +464,9 @@ ul.tooltip-description li {
     color: #fff;
   }
   #main-menu li.geolocation a:before {
-<<<<<<< HEAD
     content: "\0020";
     background: url(images/geolocation.png) left top no-repeat scroll;
     display: block;
-=======
-    content: "\0020";
-    background: url(images/geolocation.png) left bottom no-repeat scroll;
-    display: block;
->>>>>>> 7cdc0f1ec856bb1d292603a5d76781c5b09a7714
     width: 24px;
     height: 40px;
     position: absolute;
