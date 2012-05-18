@@ -112,8 +112,22 @@
   };
 
   var formatStops = function(data) {
+    // What stops here?
+    var routes = [];
+    $.each(routeDetails, function(key, route) {
+      if (route['stops'] !== undefined ) {
+        $.each(route['stops'], function(i, busstop) {
+          if (busstop === data.name) {
+            routes.push(key);
+          };
+        });
+      };
+    });
+
+    // TODO: template updates.
+    // TODO: handle no routes.
     return ich.stopsTooltip({
-      'title': data.name
+      'title': data.name + '(... FORMAT ME routes: ' +  routes.join(', ') + ')'
     });
   };
 
