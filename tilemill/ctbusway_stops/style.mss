@@ -9,10 +9,10 @@
     marker-opacity:0.0;
     marker-line-opacity:0.0;
   }
-  
+
   [zoom = 12] { marker-width:4; }
   [zoom >= 13] { marker-width:5; }
-  
+
   marker-width:3;
   marker-fill:@default;
   marker-line-color:@default;
@@ -29,12 +29,12 @@
   marker-line-color:@metro_north;
 }
 .stops[type='busway'] {
-  [zoom = 12] { 
-    marker-width:8; 
+  [zoom = 12] {
+    marker-width:8;
     marker-line-width:1.6;
   }
-  [zoom >= 13] { 
-    marker-width:10; 
+  [zoom >= 13] {
+    marker-width:10;
     marker-line-width:2.0;
   }
 
@@ -44,4 +44,12 @@
   marker-opacity:1;
   marker-line-width:1.2;
   marker-line-opacity:0.9;
+}
+
+.poi {
+  [zoom>=12] {
+    [Type='Mall'] { point-file: url('img/maki/shop-12.png')}
+    [Type='Medical'] { point-file: url('img/maki/hospital-12.png')}
+    [Type='College/University/Adult'] { point-file: url('img/maki/college-12.png')}
+  }
 }

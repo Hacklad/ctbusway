@@ -21,7 +21,7 @@
   line-dasharray:1,2;
   line-width:0.5;
   line-opacity:0.5;
-  
+
   text-name:'[NAME10]';
   text-face-name:'Helvetica Neue Medium';
   text-fill:@text;
@@ -29,7 +29,7 @@
   text-halo-fill:@texthalo;
   text-halo-radius:2;
   text-size:10;
-  
+
   [NAME10='Hartford'] {
     text-size:@importanttextsize;
     [zoom = 11] { text-dx:17; text-dy:-12; }
@@ -50,7 +50,7 @@
   [NAME10='New Haven'] {
     text-size:@importanttextsize;
   }
-  
+
   [NAME10='Meriden'] {
     [zoom = 11] { text-dx:5; }
   }
@@ -66,7 +66,7 @@
     line-width:8;
     line-opacity:0.0;
   }
- 
+
   [zoom = 12] { line-width:1.5;}
   [zoom >= 13] { line-width:2;}
 
@@ -116,27 +116,27 @@
     [zoom = 11] { line-width:15;}
     [zoom = 12] { line-width:20;}
     [zoom >= 13] { line-width:23;}
-    
+
     line-color:@busway;
     line-opacity:0.5;
     line-width:10;
   }
-  
+
   line-width:1;
   line-color:transparent;
   line-pattern-file:url('img/express_local_1.png');
-  
+
   [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
 }
 
 /*
 #busway {
-  [zoom = 12] { 
-    marker-width:8; 
+  [zoom = 12] {
+    marker-width:8;
     marker-line-width:1.6;
   }
-  [zoom >= 13] { 
-    marker-width:10; 
+  [zoom >= 13] {
+    marker-width:10;
     marker-line-width:2.0;
   }
 

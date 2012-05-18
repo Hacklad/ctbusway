@@ -70,6 +70,20 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "stops"
+    },
+    {
+      "geometry": "point",
+      "id": "min_poi",
+      "class": "poi",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/PointsOfInterest_minimal.zip",
+        "id": "min_poi",
+        "project": "ctbusway_routes",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "min_poi"
     }
   ],
   "name": "CT Busway Stops",
