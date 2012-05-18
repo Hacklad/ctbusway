@@ -1,7 +1,7 @@
 @boundary:#999;
 @busway:#c7ef92;
 @amtrak:#E41A1C;
-@metro_north:#238B45;@default:#999;
+@metro_north:#9e1114;
 
 .stops {
   ::interactionbuffer {
@@ -14,8 +14,6 @@
   [zoom >= 13] { marker-width:5; }
 
   marker-width:3;
-  marker-fill:@default;
-  marker-line-color:@default;
   marker-allow-overlap:true;
 }
 
@@ -47,9 +45,7 @@
 }
 
 .poi {
-  [zoom>=12] {
-    [Type='Mall'] { point-file: url('img/maki/shop-12.png')}
-    [Type='Medical'] { point-file: url('img/maki/hospital-12.png')}
-    [Type='College/University/Adult'] { point-file: url('img/maki/college-12.png')}
-  }
+  [Type='Mall'] { point-file: url('img/maki/shop-12.png')}
+  [Type='Medical'] { point-file: url('img/maki/hospital-12.png')}
+  [Type='College/University/Adult'] { point-file: url('img/maki/college-18.png')}
 }

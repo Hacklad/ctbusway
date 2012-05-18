@@ -119,7 +119,7 @@
     var a = r1["name"], b = r2["name"];
     if (a === b) {
       return 0;
-    };
+    }
     var regexps = [BW, BX, C];
     var re;
     for (var i in regexps) {
@@ -129,13 +129,13 @@
           return (a < b)? -1: 1;
         } else {
           return -1;
-	};
+        }
       } else if (re.test(b)) {
         return 1;
       } else {
         return (a < b)? -1: 1;
-      };
-    };
+      }
+    }
   };
 
   var formatStops = function(data) {

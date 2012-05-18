@@ -63,6 +63,17 @@
       "srs-name": "autodetect",
       "srs": "",
       "name": "towns"
+    },
+    {
+      "geometry": "linestring",
+      "id": "mulitusetrail",
+      "class": "trail",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/mulitusetrail.zip"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "mulitusetrail"
     }
   ],
   "name": "CT Busway Routes",
