@@ -111,6 +111,33 @@
     });
   };
 
+  // For sorting routes alphabetically, but BW first, then BX, then C, then other.
+  var BW = new RegExp('^BW[0-9]');
+  var BX = new RegExp('^BX[0-9]');
+  var C = new RegExp('^C[0-9]');
+  var routeCmp = function(r1, r2) {
+    var a = r1["name"], b = r2["name"];
+    if (a === b) {
+      return 0;
+    };
+    var regexps = [BW, BX, C];
+    var re;
+    for (var i in regexps) {
+      re = regexps[i];
+      if (re.test(a)) {
+        if (re.test(b)) {
+          return (a < b)? -1: 1;
+        } else {
+          return -1;
+	};
+      } else if (re.test(b)) {
+        return 1;
+      } else {
+        return (a < b)? -1: 1;
+      };
+    };
+  };
+
   var formatStops = function(data) {
     // What stops here?
     var routes = [];
@@ -123,6 +150,7 @@
         });
       }
     });
+    routes.sort(routeCmp);
 
     return ich.stopsTooltip({
       'title': data.name,
