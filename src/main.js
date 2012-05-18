@@ -115,19 +115,18 @@
     // What stops here?
     var routes = [];
     $.each(routeDetails, function(key, route) {
-      if (route['stops'] !== undefined ) {
+      if (route['stops']) {
         $.each(route['stops'], function(i, busstop) {
           if (busstop === data.name) {
-            routes.push(key);
-          };
+            routes.push({'name': key});
+          }
         });
-      };
+      }
     });
 
-    // TODO: template updates.
-    // TODO: handle no routes.
     return ich.stopsTooltip({
-      'title': data.name + '(... FORMAT ME routes: ' +  routes.join(', ') + ')'
+      'title': data.name,
+      'routes': routes
     });
   };
 

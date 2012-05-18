@@ -373,17 +373,38 @@ a.close-bttn:hover {
   -moz-transition: opacity 150ms;
 }
 
+.routes-tooltip {
+}
+
+.stops-tooltip {
+  padding-top:0.3em;
+}
+
 .tooltip-title {
   font-weight: bold;
 }
 
-.tooltip-description {
-  margin-top:0.5em;
+.stops-tooltip .tooltip-title {
   font-size:0.8em;
 }
 
-.stops-tooltip {
-  margin-bottom:0.5em;
+.routes-tooltip .tooltip-title {
+  padding-bottom:2px;
+  font-style:underline;
+}
+
+.tooltip-description {
+  margin-top:0.25em;
+  font-size:0.75em;
+  margin-left:1.8em;
+}
+
+ul.tooltip-description {
+  list-style:none;
+}
+
+ul.tooltip-description li {
+  line-height:1.2em;
 }
 
 

@@ -50,8 +50,8 @@
 
 
       <div class="tooltip">
-        <div class="stops-tooltip"></div>
         <div class="routes-tooltip"></div>
+        <div class="stops-tooltip"></div>
       </div>
 
     <div id="map"></div>
@@ -77,6 +77,11 @@
 
     <script id="stopsTooltip" type="text/html">
       <div class="tooltip-title">{{ title }}</div>
+      <ul class="tooltip-description">
+      {{#routes}}
+        <li>{{name}}</li>
+      {{/routes}}
+      </ul>
     </script>
 
     <script id="routesTooltip" type="text/html">
