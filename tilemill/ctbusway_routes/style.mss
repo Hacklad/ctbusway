@@ -60,13 +60,13 @@
 
 .routes [type='amtrak'] {
   ::dashes {
+    line-color:@amtrak;
+    line-dasharray: 1,12;
     [zoom = 11] { line-width:4;}
     [zoom = 12] { line-width:5;}
     [zoom >= 13] { line-width:6;}
-    line-dasharray: 1,6;
-    line-color:@amtrak;
   }
-
+  
   /* no busway, but parallel */
   line-color:@amtrak;
   [zoom = 11] { line-width:2;}
@@ -76,13 +76,13 @@
 
 .routes [type='metro_north'] {
   ::dashes {
+    line-color:@metro_north;
+    line-dasharray: 1,12;
     [zoom = 11] { line-width:4;}
     [zoom = 12] { line-width:5;}
     [zoom >= 13] { line-width:6;}
-    line-dasharray: 1,6;
-    line-color:@metro_north;
   }
-  
+
   /* no busway */
   line-color:@metro_north;
   [zoom = 11] { line-width:2;}
@@ -156,5 +156,10 @@
   [NAME10='Berlin'] {
     text-horizontal-alignment:left;
     [zoom = 11] { text-dx:5; }
+  }
+  
+  [NAME10='County subdivisions not defined'] {
+    text-fill:transparent;
+    text-halo-fill:transparent;
   }
 }
