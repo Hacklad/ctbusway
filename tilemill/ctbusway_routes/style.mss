@@ -61,7 +61,7 @@
 .routes [type='amtrak'] {
   ::dashes {
     line-color:@amtrak;
-    line-dasharray: 1,12;
+    line-dasharray: 1,6;
     [zoom = 11] { line-width:4;}
     [zoom = 12] { line-width:5;}
     [zoom >= 13] { line-width:6;}
@@ -77,7 +77,7 @@
 .routes [type='metro_north'] {
   ::dashes {
     line-color:@metro_north;
-    line-dasharray: 1,12;
+    line-dasharray: 1,6;
     [zoom = 11] { line-width:4;}
     [zoom = 12] { line-width:5;}
     [zoom >= 13] { line-width:6;}
@@ -112,6 +112,8 @@
   line-width:1;
   line-color:transparent;
   line-pattern-file:url('img/multiusetrail_1.png');
+  
+  [zoom >= 12] {line-pattern-file:url('img/multiusetrail_2.png');}
 }
 
 #towns {
