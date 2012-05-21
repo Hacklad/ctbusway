@@ -12,7 +12,7 @@
 @amtrak:#E41A1C;
 @metro_north:#9e1114;
 
-@trail:#4EB3D3;
+@trail:#000;
 
 @texthalo: #f1f1f1;
 @text: #444;
@@ -87,11 +87,9 @@
 }
 
 #mulitusetrail {
-  [zoom = 11] { line-width:0.9; }
-  [zoom = 12] { line-width:0.8; }
-  [zoom = 13] { line-width:1.6; }
-  
-  line-color:@trail;
+  line-width:1;
+  line-color:transparent;
+  line-pattern-file:url('img/multiusetrail_1.png');
 }
 
 #towns {
