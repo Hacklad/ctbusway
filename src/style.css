@@ -339,12 +339,15 @@ a.close-bttn:hover {
   font-size: 85%;
   font-weight: bold;
   color: #666;
-  padding: 0.5em 0 0.5em 1em;
+  padding: 0.5em 0 0.5em 0.5em;
   margin: 0;
 }
 #legend-content li {
   margin: 0.5em 0;
-  padding: 0 0 0 0.75em;
+  padding: 0;
+}
+#legend-content li img {
+  vertical-align: text-bottom;
 }
 #legend-content span {
   display: none;
@@ -353,6 +356,13 @@ a.close-bttn:hover {
 #legend.expose span {
   display: inline;
 }
+#legend-content li.ctfastrak {}
+#legend-content li.proposed {}
+#legend-content li.express {}
+#legend-content li.nhhsrail {}
+#legend-content li.wbrail {}
+#legend-content li.mutrail {}
+
 #legend-bttn {
   display: block;
   position: absolute;
