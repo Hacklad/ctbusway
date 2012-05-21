@@ -46,6 +46,11 @@
 
 .poi {
   [Type='Mall'] { point-file: url('img/maki/shop-12.png')}
+  [Type='Shopping'] { point-file: url('img/maki/shop-12.png')}
   [Type='Medical'] { point-file: url('img/maki/hospital-12.png')}
   [Type='College/University/Adult'] { point-file: url('img/maki/college-18.png')}
+}
+
+.parking[Status='Active'] {
+  point-file: url('img/maki/parking-18.png');
 }
