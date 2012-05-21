@@ -6,7 +6,7 @@
       "agency": "",
       "name": "CTfastrak Busway"
     },
-    "ALL_ROUTES_TWEAKED_1337272551": {
+    "ALL_ROUTES_TWEAKED_20120521_1": {
       "type": "ALL ROUTES TYPE",
       "agency": "",
       "name": "%(ROUTE_NAME)s",
@@ -19,11 +19,12 @@
           "BW5 Newington Junction to Hartford Shuttle",
           "BX1 Waterbury Express",
           "BX2 Cheshire Express",
+          "BX3 Waterbury Cheshire Off-Peak Express",
           "C1 CCSU Connector",
           "C2 Hospitals - Capitol Connector",
           "C3 Newington Circulator",
           "C4 West Hartford - Bishops Corner Connector"
-      ]
+        ]
       }
     },
     "amtrak_ct": {
