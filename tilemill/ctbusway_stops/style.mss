@@ -1,5 +1,5 @@
 @boundary:#999;
-@busway:#c7ef92;
+@busway:#bbe386;
 @amtrak:#E41A1C;
 @metro_north:#9e1114;
 
