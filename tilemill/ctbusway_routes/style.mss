@@ -12,7 +12,7 @@
 @amtrak:#E41A1C;
 @metro_north:#9e1114;
 
-@trail:#4EB3D3;
+@trail:#000;
 
 @texthalo: #f1f1f1;
 @text: #444;
@@ -20,7 +20,7 @@
 
 .routes {
   ::interactionbuffer {
-    line-width:8;
+    line-width:6;
     line-opacity:0.0;
   }
 
@@ -29,6 +29,7 @@
 
   line-width:1;
   line-opacity:1;
+  line-smooth:0.5;
 }
 
 .routes [type='local_feeder_bus'] {
@@ -47,25 +48,46 @@
 }
 
 .routes [type='express_bus'] {
-
-  [name='BX2 Cheshire Express'] {
-    line-dasharray: 4,8;
-    line-width:2;
-    line-color:#fff;
+  [name='BX3 Waterbury Cheshire Off-Peak Express'] {
+    line-dasharray: 2,1;
   }
   /* all busway */
   line-color:@express_bus;
-
+  [zoom = 11] { line-width:1.5;}
+  [zoom = 12] { line-width:2;}
+  [zoom >= 13] { line-width:2.5;}
 }
 
 .routes [type='amtrak'] {
+  ::dashes {
+    line-color:@amtrak;
+    line-dasharray: 1,12;
+    [zoom = 11] { line-width:4;}
+    [zoom = 12] { line-width:5;}
+    [zoom >= 13] { line-width:6;}
+  }
+  
   /* no busway, but parallel */
   line-color:@amtrak;
+  [zoom = 11] { line-width:2;}
+  [zoom = 12] { line-width:2.5;}
+  [zoom >= 13] { line-width:3;}
 }
 
 .routes [type='metro_north'] {
+  ::dashes {
+    line-color:@metro_north;
+    line-dasharray: 1,12;
+    [zoom = 11] { line-width:4;}
+    [zoom = 12] { line-width:5;}
+    [zoom >= 13] { line-width:6;}
+  }
+
   /* no busway */
   line-color:@metro_north;
+  [zoom = 11] { line-width:2;}
+  [zoom = 12] { line-width:2.5;}
+  [zoom >= 13] { line-width:3;}
 }
 
 .routes::on_top[type='busway'] {
@@ -87,11 +109,9 @@
 }
 
 #mulitusetrail {
-  [zoom = 11] { line-width:0.9; }
-  [zoom = 12] { line-width:0.8; }
-  [zoom = 13] { line-width:1.6; }
-  
-  line-color:@trail;
+  line-width:1;
+  line-color:transparent;
+  line-pattern-file:url('img/multiusetrail_1.png');
 }
 
 #towns {
@@ -136,5 +156,10 @@
   [NAME10='Berlin'] {
     text-horizontal-alignment:left;
     [zoom = 11] { text-dx:5; }
+  }
+  
+  [NAME10='County subdivisions not defined'] {
+    text-fill:transparent;
+    text-halo-fill:transparent;
   }
 }

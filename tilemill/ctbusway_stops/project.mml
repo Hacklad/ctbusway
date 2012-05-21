@@ -59,6 +59,20 @@
     },
     {
       "geometry": "point",
+      "id": "parknridelots",
+      "class": "parking",
+      "Datasource": {
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Commuter_ParknRideLots.shp.zip",
+        "id": "parknridelots",
+        "project": "ctbusway_stops",
+        "srs": null
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "name": "parknridelots"
+    },
+    {
+      "geometry": "point",
       "id": "stops",
       "class": "stops",
       "Datasource": {
