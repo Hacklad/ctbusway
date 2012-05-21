@@ -268,6 +268,9 @@ button {width: auto; overflow: visible;}
   left: 0;
   z-index: 50;
 }
+.leaflet-container .leaflet-control-attribution {
+  font-size: 9px;
+}
 
 
 /* =Dialog Content
@@ -336,12 +339,45 @@ a.close-bttn:hover {
   font-size: 85%;
   font-weight: bold;
   color: #666;
-  padding: 0.5em 1.25em 0.5em 1em;
+  padding: 0.5em 0 0.5em 1em;
   margin: 0;
 }
 #legend-content li {
   margin: 0.5em 0;
   padding: 0 0 0 0.75em;
+}
+#legend-content span {
+  display: none;
+  margin-right: 1.25em;
+}
+#legend.expose span {
+  display: inline;
+}
+#legend-bttn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-indent: -9999px;
+}
+#legend.expose #legend-bttn {
+	background-color: #fff;
+	color: #fe6f5e;
+	font-size: 1.5em;
+	font-weight: bold;
+  text-indent: 0;
+	text-decoration: none;
+	padding: 0 0.4em 0.23em;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: auto;
+	left: auto;
+}
+#legend.expose #legend-bttn:hover {
+	color: #bf4f51;
 }
 
 
@@ -418,6 +454,13 @@ ul.tooltip-description li {
 }
 
 @media only screen and (min-width: 768px) {
+  #legend-bttn {
+    display: none;
+  }
+  #legend-content span {
+    display: inline;
+  }
+
   #main-menu #nav-bttn {
     display: none;
   }
@@ -467,7 +510,7 @@ ul.tooltip-description li {
     content: "\0020";
     background: url(images/geolocation.png) left top no-repeat scroll;
     display: block;
-    width: 24px;
+      width: 24px;
     height: 40px;
     position: absolute;
     bottom: 0.25em;
@@ -479,6 +522,9 @@ ul.tooltip-description li {
   #about {
     right: 20%;
     left: 20%;
+  }
+  .leaflet-container .leaflet-control-attribution {
+    font-size: 11px;
   }
 }
 
