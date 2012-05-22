@@ -1,7 +1,7 @@
 (function(routeDetails){
     var baseUrl = 'http://{s}.tile.cloudmade.com/d253021886024e50adec434f02cbf0b5/63237/256/{z}/{x}/{y}.png',
-      routesUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_routes.jsonp',
-      stopsUrl = 'http://a.tiles.mapbox.com/v3/civicworks.ctbusway_stops.jsonp',
+      routesUrl = 'http://a.tiles.mapbox.com/v3/openplans.ct-busway-routes.jsonp',
+      stopsUrl = 'http://a.tiles.mapbox.com/v3/openplans.ct-busway-stops.jsonp',
       map = new L.Map('map', {
         minZoom: 11,
         maxZoom: 13,
