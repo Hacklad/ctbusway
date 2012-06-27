@@ -62,7 +62,7 @@
       "id": "parknridelots",
       "class": "parking",
       "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/shp/Commuter_ParknRideLots.shp.zip",
+        "file": "http://ctbusway.s3.amazonaws.com/shp/Commuter_ParknRideLots_tweaked_20120627.zip",
         "id": "parknridelots",
         "project": "ctbusway_stops",
         "srs": null
