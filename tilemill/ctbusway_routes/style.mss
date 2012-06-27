@@ -16,7 +16,8 @@
 
 @texthalo: #f1f1f1;
 @text: #444;
-@importanttextsize:14;
+
+@importanttextsize:15;
 
 .routes {
   ::interactionbuffer {
@@ -137,10 +138,21 @@
     [zoom = 13] { text-dx:50; text-dy:-45; }
   }
 
-  [NAME10='Waterbury'] {
+  [NAME10='West Hartford'] {
     text-size:@importanttextsize;
   }
 
+  [NAME10='Newington'] {
+    text-size:@importanttextsize;
+    text-horizontal-alignment:left;
+    [zoom = 11] { text-dx:45; }
+    [zoom = 12] { text-dx:35; text-dy:15; }
+  }
+
+  [NAME10='Waterbury'] {
+    text-size:@importanttextsize;
+  }
+  
   [NAME10='New Britain'] {
     text-size:@importanttextsize;
     text-horizontal-alignment:left;
