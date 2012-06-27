@@ -92,12 +92,12 @@
 
 .routes::on_top[type='busway'] {
   ::outline {
-    [zoom = 11] { line-width:15;}
-    [zoom = 12] { line-width:20;}
-    [zoom >= 13] { line-width:23;}
+    [zoom = 11] { line-width:12;}
+    [zoom = 12] { line-width:16;}
+    [zoom >= 13] { line-width:18;}
 
     line-color:@busway;
-    line-opacity:0.5;
+    line-opacity:0.4;
     line-width:10;
   }
 
