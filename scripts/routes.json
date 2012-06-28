@@ -1,7 +1,7 @@
 {
   "geomtype": "MultiLineString",
   "shps": {
-    "Busway": {
+    "Busway_tweaked": {
       "type": "busway",
       "agency": "",
       "name": "CTfastrak Busway"
