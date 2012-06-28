@@ -1,0 +1,267 @@
+Identification_Information:
+  Citation:
+    Citation_Information:
+      Originator: Federal Railroad Administration (FRA)
+      Publication_Date: March 2010
+      Title: Amtrak Stations
+      Geospatial_Data_Presentation_Form: vector digital data
+      Publication_Information:
+        Publication_Place: Washington, DC
+      Online_Linkage: http://www.fra.dot.gov
+      Larger_Work_Citation:
+        Citation_Information:
+          Online_Linkage: http://www.bts.gov/programs/geographic_information_services/
+  Description:
+    Abstract: Updated database of the Federal Railroad Administration's (FRA) Amtrak Station database. This database is a geographic data set containing Amtrak intercity railroad passenger terminals in the United States and Canada. Attribute data include services and passenger amenities provided at the station.
+    Purpose: The data set provides an updated version of the location and attribute information for all Amtrak stations in the United States and Canada. This data is used for national and network analysis applications.
+  Time_Period_of_Content:
+    Time_Period_Information:
+      Single_Date/Time:
+        Calendar_Date: March 2009
+    Currentness_Reference: publication date
+  Status:
+    Progress: Complete
+    Maintenance_and_Update_Frequency: As needed
+  Spatial_Domain:
+    Bounding_Coordinates:
+      West_Bounding_Coordinate: -124.211990
+      East_Bounding_Coordinate: -68.670621
+      North_Bounding_Coordinate: 50.331532
+      South_Bounding_Coordinate: 25.849848
+  Keywords:
+    Theme:
+      Theme_Keyword_Thesaurus: Bus
+      Theme_Keyword: Station
+    Theme:
+      Theme_Keyword: Amtrak
+      Theme_Keyword: Station
+      Theme_Keyword: Rail
+      Theme_Keyword: Train
+    Place:
+      Place_Keyword: USA
+      Place_Keyword: Canada
+      Place_Keyword: United States
+    Temporal:
+      Temporal_Keyword: 2009
+      Temporal_Keyword: 2010
+      Temporal_Keyword: 2011
+  Access_Constraints: None
+  Use_Constraints: None. Acknowledgment of the Federal Railroad Administration (FRA) should be cited in products derived from these data.
+  Point_of_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Federal Railroad Administration (FRA)
+      Contact_Position: GIS - Office of Railroad Policy & Development
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: 1200 New Jersey Avenue S.E.
+        City: Washington
+        State_or_Province: DC
+        Postal_Code: 20590
+        Country: USA
+  Security_Information:
+    Security_Classification: Unclassified
+  Native_Data_Set_Environment: Microsoft Windows XP Version 5.1 (Build 2600) Service Pack 3; ESRI ArcCatalog 9.3.0.1770
+  Cross_Reference:
+    Citation_Information:
+      Originator: Federal Railroad Administration (FRA)
+      Publication_Date: 2009
+      Title: Amtrak Stations
+      Publication_Information:
+        Publication_Place: Washington, DC
+        Publisher: Federal Railroad Administration (FRA)
+      Online_Linkage: http://www.fra.dot.gov/
+      Larger_Work_Citation:
+        Citation_Information:
+          Online_Linkage: http://www.bts.gov/programs/geographic_information_services/
+Data_Quality_Information:
+  Logical_Consistency_Report: All points records are represented by a single coordinate pair and a unique feature identifier; the Amtrak Station Code (stored in the STNCODE field). Attribute data can be matched to specific point records using this identifier.
+  Completeness_Report: The database contains all the Amtrak thruway bus and rail stations from the Amtrak website and Timetables in the US and Canada as of March 2009. As new stations are formed or if they move, this database should be updated accordingly.
+  Lineage:
+    Source_Information:
+      Source_Citation:
+        Citation_Information:
+          Online_Linkage: http://www.bts.gov/programs/geographic_information_services/
+          Larger_Work_Citation:
+            Citation_Information:
+              Online_Linkage: http://www.bts.gov/programs/geographic_information_services/
+    Process_Step:
+      Process_Description: FRA's Amtrak Database was copied and the attributes for each station was compared with the Amtrak webiste. If there were any dissimilarities, the attribute table was changed. If an address of a station changed, the location of the station was observed to determine if the point had to be moved. If a station location had to be moved, it was done manually. Newly added stations were first but into a seperate shapefile (a shapefile for each geographic ragion) and were added manually by cross-referencing their location with road atlases. Then the shapefiles were added to the database.
+      Process_Date: March 2009
+      Process_Contact:
+        Contact_Information:
+          Contact_Organization_Primary:
+            Contact_Organization: Federal Railroad Administration (FRA)
+          Contact_Position: GIS-Office of Railroad Policy & Devlopment
+          Contact_Address:
+            Address_Type: mailing and physical address
+            Address: 1200 New Jersey Avenue S.E.
+            City: Washington
+            State_or_Province: DC
+            Postal_Code: 20590
+            Country: USA
+Spatial_Data_Organization_Information:
+  Direct_Spatial_Reference_Method: Vector
+  Point_and_Vector_Object_Information:
+    SDTS_Terms_Description:
+      SDTS_Point_and_Vector_Object_Type: Entity point
+      Point_and_Vector_Object_Count: 879
+Spatial_Reference_Information:
+  Horizontal_Coordinate_System_Definition:
+    Geographic:
+      Latitude_Resolution: 0.000000
+      Longitude_Resolution: 0.000000
+      Geographic_Coordinate_Units: Decimal degrees
+    Geodetic_Model:
+      Horizontal_Datum_Name: D_WGS_1984
+      Ellipsoid_Name: WGS_1984
+      Semi-major_Axis: 6378137.000000
+      Denominator_of_Flattening_Ratio: 298.257224
+Entity_and_Attribute_Information:
+  Detailed_Description:
+    Entity_Type:
+      Entity_Type_Label: Amtrak Stations
+      Entity_Type_Definition_Source: Federal Railroad Administration (FRA)
+    Attribute:
+      Attribute_Label: FID
+      Attribute_Definition: Internal feature number.
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Sequential unique whole numbers that are automatically generated.
+    Attribute:
+      Attribute_Label: Shape
+      Attribute_Definition: Feature geometry.
+      Attribute_Definition_Source: ESRI
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Coordinates defining the features.
+    Attribute:
+      Attribute_Label: STNCODE
+      Attribute_Definition: Unique Station Code
+      Attribute_Definition_Source: Antrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: STNNAME
+      Attribute_Definition: City and State of the station
+      Attribute_Definition_Source: FRA
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: ADDRESS1
+      Attribute_Definition: Street address of the station
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: ADDRESS2
+      Attribute_Definition: Street address of the station, if applicable
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: CITY
+      Attribute_Definition: Name of the city the station is located in
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: STATE
+      Attribute_Definition: State abbreviation which follows the postal abbreviation
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: ZIP
+      Attribute_Definition: Postal ZIP code for location of station
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Unrepresentable_Domain: Character Value
+    Attribute:
+      Attribute_Label: STNTYPE
+      Attribute_Definition: Type of station
+      Attribute_Definition_Source: Amtrak
+      Attribute_Domain_Values:
+        Enumerated_Domain:
+          Enumerated_Domain_Value: BUS
+          Enumerated_Domain_Value_Definition: Station is a thruway bus stop
+          Enumerated_Domain_Value_Definition_Source: FRA
+        Enumerated_Domain:
+          Enumerated_Domain_Value: RAIL
+          Enumerated_Domain_Value_Definition: Station is a rail station
+          Enumerated_Domain_Value_Definition_Source: FRA
+        Enumerated_Domain:
+          Enumerated_Domain_Value: OTHER
+          Enumerated_Domain_Value_Definition: Station serves other modes
+          Enumerated_Domain_Value_Definition_Source: FRA
+    Attribute:
+      Attribute_Label: STFIPS
+      Attribute_Definition: Federal Information Processing Standard (FIPS) State Code
+      Attribute_Definition_Source: National Institute of Standards and Technology (NIST)
+      Attribute_Domain_Values:
+        Codeset_Domain:
+          Codeset_Name: Federal Information Processing Standard (FIPS) State Code
+          Codeset_Source: National Institute of Standards and Technology (NIST)
+    Attribute:
+      Attribute_Label: VERSION
+      Attribute_Definition: The VERSION is a 2-digit number that will be incremented for all records in the database whenever a new release is distributed.
+      Attribute_Definition_Source: RITA/BTS
+      Attribute_Domain_Values:
+        Range_Domain:
+          Range_Domain_Minimum: 00
+          Range_Domain_Maximum: 99
+  Overview_Description:
+Distribution_Information:
+  Distributor:
+    Contact_Information:
+      Contact_Person_Primary:
+        Contact_Person: Office of Geospatial Information Systems
+        Contact_Organization: Research and Innovative Technology Administration's Bureau of Transportation Statistics (RITA/BTS)
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: 1200 New Jersey Ave. S.E.
+        City: Washington
+        State_or_Province: DC
+        Postal_Code: 20590
+        Country: USA
+      Contact_Voice_Telephone: 202-366-DATA
+      Contact_Electronic_Mail_Address: answers@bts.gov
+  Resource_Description: Downloadable Data
+  Distribution_Liability: None
+  Standard_Order_Process:
+    Digital_Form:
+      Digital_Transfer_Information:
+        Format_Name: ESRI Shapefile
+        Format_Version_Number: 2011
+        File_Decompression_Technique: no compression applied
+        Transfer_Size: 0.024
+      Digital_Transfer_Option:
+        Online_Option:
+          Access_Instructions: NTAD is available for download at www.bts.gov/programs/geographic_information_services.  The NTAD DVD can also be ordered from the online bookstore at www.bts.gov.
+    Ordering_Instructions: Call 202-366-DATA, or E-mail (answers@bts.gov) RITA/BTS to request the National Transportation Atlas Databases (NTAD) 2011 DVD.  This and other RITA/BTS products may be ordered from the RITA/BTS Internet website http://www.bts.gov/programs/geographic_information_services/.
+  Technical_Prerequisites: Software that can process GIS files.
+  Available_Time_Period:
+    Time_Period_Information:
+      Single_Date/Time:
+        Calendar_Date: 2011
+Metadata_Reference_Information:
+  Metadata_Date: 20110401
+  Metadata_Contact:
+    Contact_Information:
+      Contact_Organization_Primary:
+        Contact_Organization: Federal Railroad Administration (FRA)
+      Contact_Address:
+        Address_Type: mailing and physical address
+        Address: 1200 New Jersey Avenue S.E.
+        City: Washington
+        State_or_Province: DC
+        Postal_Code: 20590
+        Country: USA
+      Contact_Voice_Telephone: REQUIRED: The telephone number by which individuals can speak to the organization or individual.
+  Metadata_Standard_Name: FGDC Content Standards for Digital Geospatial Metadata
+  Metadata_Standard_Version: FGDC-STD-001-1998
+  Metadata_Time_Convention: local time
+  Metadata_Extensions:
+    Online_Linkage: http://www.esri.com/metadata/esriprof80.html
+    Profile_Name: ESRI Metadata Profile
