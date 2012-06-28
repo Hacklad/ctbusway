@@ -92,7 +92,7 @@
 }
 
 .routes::on_top[type='busway'] {
-  ::outline {
+  ::outline[name!='CTfastrak Downtown Loop'] {
     [zoom = 11] { line-width:12;}
     [zoom = 12] { line-width:16;}
     [zoom >= 13] { line-width:18;}

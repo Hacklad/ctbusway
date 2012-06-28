@@ -1,6 +1,6 @@
 (function(routeDetails){
     var baseUrl = 'http://{s}.tile.cloudmade.com/d253021886024e50adec434f02cbf0b5/63237/256/{z}/{x}/{y}.png',
-      routesUrl = 'http://a.tiles.mapbox.com/v3/openplans.ctbusway_routes_27534.jsonp',
+      routesUrl = 'http://a.tiles.mapbox.com/v3/openplans.ctbusway_routes_628411.jsonp',
       stopsUrl = 'http://a.tiles.mapbox.com/v3/openplans.ctbusway_stops_27511.jsonp',
       map = new L.Map('map', {
         minZoom: 11,
@@ -157,7 +157,7 @@
     });
     routes.sort(routeCmp);
 
-    return ich.stopsTooltip({
+    return ich.tooltip({
       'title': data.name,
       'routes': routes
     });
@@ -200,55 +200,60 @@
         ],
         rushHour, minuteArray, other, min, max, headway,
         // Default display html
-        desc = '';
+        desc = '', routes;
 
     // Not everything has additional route data
     if (routeData) {
-      // Get the rush hours, assuming AM and PM are the samefor simplicity
-      rushHour = parseInt(routeData['Weekday AM Peak'], 10),
-      // Get the min and max for non rush hour headways
-      minuteArray = getMinutes(otherKeys, routeData),
-      min = Math.min.apply(null, minuteArray);
-      max = Math.max.apply(null, minuteArray);
+      if (data.name === 'CTfastrak Downtown Loop') {
+        routes = routeData.routes;
+      } else {
+        // Get the rush hours, assuming AM and PM are the samefor simplicity
+        rushHour = parseInt(routeData['Weekday AM Peak'], 10),
+        // Get the min and max for non rush hour headways
+        minuteArray = getMinutes(otherKeys, routeData),
+        min = Math.min.apply(null, minuteArray);
+        max = Math.max.apply(null, minuteArray);
 
-      if (min === -Infinity || min === Infinity) {
-        // Not all busways have off-peak times.
-        other = '';
-      } else {
-        // Support ranges for non-peak headways
-        if (min === max) {
-          other = 'every ' + max;
-        } else  {
-          other = 'between ' + min + ' and ' + max;
-        }
-      }
-      // Tailor the output string to several combinations of times:
-      if (min === max && max === rushHour) {
-        // Peak and nonpeak times are the same.
-        desc += 'Runs every ' + rushHour + ' minutes.';
-      } else if (isNaN(rushHour)) {
-        // There are no peak times.
-        if (min === max) {
-          desc += 'Runs every ' + min + ' minutes at off-peak times.';
+        if (min === -Infinity || min === Infinity) {
+          // Not all busways have off-peak times.
+          other = '';
         } else {
-          desc += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
+          // Support ranges for non-peak headways
+          if (min === max) {
+            other = 'every ' + max;
+          } else  {
+            other = 'between ' + min + ' and ' + max;
+          }
         }
-      } else {
-        // There are peak times...
-        desc += 'Runs every ' + rushHour + ' minutes during rush hour';
-        if (other === '') {
-          // ... but no offpeak.
-          desc += '.';
+        // Tailor the output string to several combinations of times:
+        if (min === max && max === rushHour) {
+          // Peak and nonpeak times are the same.
+          desc += 'Runs every ' + rushHour + ' minutes.';
+        } else if (isNaN(rushHour)) {
+          // There are no peak times.
+          if (min === max) {
+            desc += 'Runs every ' + min + ' minutes at off-peak times.';
+          } else {
+            desc += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
+          }
         } else {
-          // ... with off-peak times also.
-          desc += ' and ' + other + ' minutes at other times.';
+          // There are peak times...
+          desc += 'Runs every ' + rushHour + ' minutes during rush hour';
+          if (other === '') {
+            // ... but no offpeak.
+            desc += '.';
+          } else {
+            // ... with off-peak times also.
+            desc += ' and ' + other + ' minutes at other times.';
+          }
         }
       }
     }
 
-    return ich.routesTooltip({
+    return ich.tooltip({
       'title': data.name,
-      'description': desc
+      'description': desc,
+      'routes': routes
     });
   };
 

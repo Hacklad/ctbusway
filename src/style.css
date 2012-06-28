@@ -445,11 +445,12 @@ a.close-bttn:hover {
   margin-left:1.8em;
 }
 
-ul.tooltip-description {
+.tooltip-description ul{
   list-style:none;
+  margin:0;
 }
 
-ul.tooltip-description li {
+.tooltip-description li {
   line-height:1.2em;
 }
 

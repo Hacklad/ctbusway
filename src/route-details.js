@@ -1,4 +1,16 @@
 var routeDetails = {
+  "CTfastrak Downtown Loop": {
+    "routes": [
+      { "name": "BW1 New Britain to Hartford Shuttle"},
+      { "name": "BW2 Bristol to Hartford Shuttle"},
+      { "name": "BW3 New Britain-Westfarms-Hartford"},
+      { "name": "BW4 UConn Health-Westfarms-Hartford"},
+      { "name": "BW5 Newington Junction to Hartford Shuttle"},
+      { "name": "BX1 Waterbury Express"},
+      { "name": "BX2 Cheshire Express"},
+      { "name": "BX3 Waterbury Cheshire Off-Peak Express" }
+    ]
+  },
   "C1 CCSU Connector": {
     "One Way Travel Time": "13 minutes",
     "One Way Mileage": "3.1 miles",

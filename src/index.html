@@ -86,19 +86,16 @@ beyond.
       </ul>
     </div>
 
-
-    <script id="stopsTooltip" type="text/html">
+    <script id="tooltip" type="text/html">
       <div class="tooltip-title">{{ title }}</div>
-      <ul class="tooltip-description">
-      {{#routes}}
-        <li>{{name}}</li>
-      {{/routes}}
-      </ul>
-    </script>
-
-    <script id="routesTooltip" type="text/html">
-      <div class="tooltip-title">{{ title }}</div>
-      <div class="tooltip-description">{{ description }}</div>
+      <div class="tooltip-description">
+        {{ description }}
+        <ul>
+        {{#routes}}
+          <li>{{name}}</li>
+        {{/routes}}
+        </ul>
+      </div>
     </script>
 
     <script type="text/javascript" src="lib/jquery-1.7.2.min.js"></script>
