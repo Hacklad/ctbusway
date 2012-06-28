@@ -1,10 +1,15 @@
 {
   "geomtype": "MultiLineString",
   "shps": {
-    "Busway_tweaked": {
+    "busway_noloop": {
       "type": "busway",
       "agency": "",
       "name": "CTfastrak Busway"
+    },
+    "hartford_loop": {
+      "type": "busway",
+      "agency": "",
+      "name": "CTfastrak Downtown Loop"
     },
     "ALL_ROUTES_TWEAKED": {
       "type": "ALL ROUTES TYPE",
