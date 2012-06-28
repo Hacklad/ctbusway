@@ -6,7 +6,7 @@
       "agency": "",
       "name": "CTfastrak Busway"
     },
-    "ALL_ROUTES_TWEAKED_20120521_1": {
+    "ALL_ROUTES_TWEAKED": {
       "type": "ALL ROUTES TYPE",
       "agency": "",
       "name": "%(ROUTE_NAME)s",
@@ -32,7 +32,7 @@
       "agency": "",
       "name": "Amtrak"
     },
-    "metro_north_ct_only_rail_tweaked_1337272867": {
+    "metro_north_ct_only_rail_tweaked": {
       "type": "metro_north",
       "agency": "",
       "name": "Metro-North"

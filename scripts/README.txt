@@ -13,9 +13,11 @@ Finally:
   # individual jars
   # before setting as CLASSPATH.
 
-
   jython merge_shps.py <PATH_TO_SHAPEFILES_DIRECTORY> routes.json <OUTPUT_FILE>
 
+The shapefiles directory is in git now, see ../shapefiles.
 
 The routes.json file is config that tells how to merge the shapefiles
 in your directory; routes is the name of the output shapefile.
+
+Save the results in the ../shapefiles directory and commit.
