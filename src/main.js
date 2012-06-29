@@ -164,7 +164,6 @@
   };
 
   var formatRoutes = function(data) {
-
     // Turn the route data into an array of minutes integers
     var getMinutes = function(keys, routeData) {
       var i, m, mins = [];
@@ -180,81 +179,96 @@
       return mins;
     };
 
-    var routeData = routeDetails[data.name],
-        // Keys for the minute values. Go see route-details.js.
-        rushKeys = [
-          'Weekday AM Peak',
-          'Weekday PM Peak'
-        ],
-        otherKeys = [
-          'Weekday Midday',
-          'Weekday Evening',
-          'Saturday AM Peak',
-          'Saturday Midday',
-          'Saturday PM Peak',
-          'Saturday Evening',
-          'Sunday AM Peak',
-          'Sunday Midday',
-          'Sunday PM Peak',
-          'Sunday Evening'
-        ],
-        rushHour, minuteArray, other, min, max, headway,
-        // Default display html
-        desc = '', routes;
+    // Format a single route
+    var formatRoute = function(name, routeData) {
+      // Keys for the minute values. Go see route-details.js.
+      var rushKeys = [
+            'Weekday AM Peak',
+            'Weekday PM Peak'
+          ],
+          otherKeys = [
+            'Weekday Midday',
+            'Weekday Evening',
+            'Saturday AM Peak',
+            'Saturday Midday',
+            'Saturday PM Peak',
+            'Saturday Evening',
+            'Sunday AM Peak',
+            'Sunday Midday',
+            'Sunday PM Peak',
+            'Sunday Evening'
+          ],
+          rushHour, minuteArray, other, min, max, headway,
+          // Default display html
+          desc = '', routes;
 
-    // Not everything has additional route data
-    if (routeData) {
-      if (data.name === 'CTfastrak Downtown Loop') {
-        routes = routeData.routes;
-      } else {
-        // Get the rush hours, assuming AM and PM are the samefor simplicity
-        rushHour = parseInt(routeData['Weekday AM Peak'], 10),
-        // Get the min and max for non rush hour headways
-        minuteArray = getMinutes(otherKeys, routeData),
-        min = Math.min.apply(null, minuteArray);
-        max = Math.max.apply(null, minuteArray);
+      // Not everything has additional route data
+      if (routeData) {
+        if (name === 'CTfastrak Downtown Loop') {
+          routes = routeData.routes;
+        } else {
+          // Get the rush hours, assuming AM and PM are the samefor simplicity
+          rushHour = parseInt(routeData['Weekday AM Peak'], 10),
+          // Get the min and max for non rush hour headways
+          minuteArray = getMinutes(otherKeys, routeData),
+          min = Math.min.apply(null, minuteArray);
+          max = Math.max.apply(null, minuteArray);
 
-        if (min === -Infinity || min === Infinity) {
-          // Not all busways have off-peak times.
-          other = '';
-        } else {
-          // Support ranges for non-peak headways
-          if (min === max) {
-            other = 'every ' + max;
-          } else  {
-            other = 'between ' + min + ' and ' + max;
-          }
-        }
-        // Tailor the output string to several combinations of times:
-        if (min === max && max === rushHour) {
-          // Peak and nonpeak times are the same.
-          desc += 'Runs every ' + rushHour + ' minutes.';
-        } else if (isNaN(rushHour)) {
-          // There are no peak times.
-          if (min === max) {
-            desc += 'Runs every ' + min + ' minutes at off-peak times.';
+          if (min === -Infinity || min === Infinity) {
+            // Not all busways have off-peak times.
+            other = '';
           } else {
-            desc += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
+            // Support ranges for non-peak headways
+            if (min === max) {
+              other = 'every ' + max;
+            } else  {
+              other = 'between ' + min + ' and ' + max;
+            }
           }
-        } else {
-          // There are peak times...
-          desc += 'Runs every ' + rushHour + ' minutes during rush hour';
-          if (other === '') {
-            // ... but no offpeak.
-            desc += '.';
+          // Tailor the output string to several combinations of times:
+          if (min === max && max === rushHour) {
+            // Peak and nonpeak times are the same.
+            desc += 'Runs every ' + rushHour + ' minutes.';
+          } else if (isNaN(rushHour)) {
+            // There are no peak times.
+            if (min === max) {
+              desc += 'Runs every ' + min + ' minutes at off-peak times.';
+            } else {
+              desc += 'Runs between ' + min + ' and ' + max + ' minutes at off-peak times.';
+            }
           } else {
-            // ... with off-peak times also.
-            desc += ' and ' + other + ' minutes at other times.';
+            // There are peak times...
+            desc += 'Runs every ' + rushHour + ' minutes during rush hour';
+            if (other === '') {
+              // ... but no offpeak.
+              desc += '.';
+            } else {
+              // ... with off-peak times also.
+              desc += ' and ' + other + ' minutes at other times.';
+            }
           }
         }
       }
-    }
 
-    return ich.tooltip({
-      'title': data.name,
-      'description': desc,
-      'routes': routes
+      return ich.tooltip({
+        'title': name,
+        'description': desc,
+        'routes': routes
+      });
+    };
+
+    // Split on a comma with optional space, will return the whole
+    // term if no comma is present
+    var names = data.name.split(/, ?/),
+        $temp = $('<div></div>');
+
+    // Loop over the route(s) for this line
+    $.each(names, function(i, name){
+      $temp.append(formatRoute(name, routeDetails[name]));
     });
+
+    // Append elements to a temp jQuery object and return it's children
+    return $temp.children();
   };
 
   initLocation();
