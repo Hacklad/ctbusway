@@ -1,8 +1,13 @@
 {
   "geomtype": "MultiLineString",
   "shps": {
-    "busway_noloop": {
+    "busway_noamtrak": {
       "type": "busway",
+      "agency": "",
+      "name": "CTfastrak Busway"
+    },
+    "busway_amtrak": {
+      "type": "busway_amtrak",
       "agency": "",
       "name": "CTfastrak Busway"
     },

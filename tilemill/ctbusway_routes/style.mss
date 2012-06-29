@@ -18,7 +18,7 @@
 @text: #444;
 
 @importanttextsize:15;
-
+ 
 .routes {
   ::interactionbuffer {
     line-width:6;
@@ -56,22 +56,6 @@
   [zoom >= 13] { line-width:2.5;}
 }
 
-.routes [type='amtrak'] {
-  ::dashes {
-    line-color:@amtrak;
-    line-dasharray: 1,6;
-    [zoom = 11] { line-width:4;}
-    [zoom = 12] { line-width:5;}
-    [zoom >= 13] { line-width:6;}
-  }
-  
-  /* no busway, but parallel */
-  line-color:@amtrak;
-  [zoom = 11] { line-width:2;}
-  [zoom = 12] { line-width:2.5;}
-  [zoom >= 13] { line-width:3;}
-}
-
 .routes [type='metro_north'] {
   ::dashes {
     line-color:@metro_north;
@@ -88,22 +72,48 @@
   [zoom >= 13] { line-width:3;}
 }
 
-.routes::on_top[type='busway'] {
-  ::outline[name!='CTfastrak Downtown Loop'] {
-    [zoom = 11] { line-width:12;}
-    [zoom = 12] { line-width:16;}
-    [zoom >= 13] { line-width:18;}
+.routes[type='busway'], .routes[type='busway_amtrak'] {
+  [name!='CTfastrak Downtown Loop'] {
+    [zoom = 11] { line-width:13;}
+    [zoom = 12] { line-width:17;}
+    [zoom >= 13] { line-width:20;}
 
     line-color:@busway;
     line-opacity:0.4;
-    line-width:10;
+    line-width:11;
   }
+}
 
-  line-width:1;
+.routes::on_top[type='busway'], .routes::on_top[type='busway_amtrak'] {
+  line-width:6;
   line-color:transparent;
-  line-pattern-file:url('img/express_local_1.png');
+  line-cap:round;
+}
 
+.routes::on_top[type='busway_amtrak'] {
+  line-pattern-file:url('img/express_local_1amtrak.png');
+  [zoom >= 12] {line-pattern-file:url('img/express_local_2amtrak.png');}
+}
+
+.routes::on_top[type='busway'] {
+  line-pattern-file:url('img/express_local_1.png');
   [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
+}
+
+.routes[type='amtrak'] {
+  ::dashes {
+    line-color:@amtrak;
+    line-dasharray: 1,6;
+    [zoom = 11] { line-width:4;}
+    [zoom = 12] { line-width:5;}
+    [zoom >= 13] { line-width:6;}
+  }
+  
+  /* no busway, but parallel */
+  line-color:@amtrak;
+  [zoom = 11] { line-width:1.5;}
+  [zoom = 12] { line-width:2;}
+  [zoom >= 13] { line-width:3;}
 }
 
 #mulitusetrail {
