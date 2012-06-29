@@ -13,6 +13,8 @@ def merge_shapefiles(config, out_layer):
     # Iterate over each configured shape
     for shp_name, shp_config in config['shps'].iteritems():
         # Copy it to memory so the reprojected layer will also be in memory
+        print "-" * 40
+        print "Shapefile:", shp_name
         mem_ws.add(in_ws[shp_name], name=shp_name)
         shp4326 = mem_ws[shp_name].reproject(epsg4326)
 
