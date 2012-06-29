@@ -69,7 +69,7 @@
 
   marker-width:6;
   marker-fill:@busway;
-  marker-line-color:#fff;
+  marker-line-color:#444;
   marker-opacity:1;
   marker-line-width:1.2;
   marker-line-opacity:0.9;
