@@ -29,7 +29,29 @@ Editing and Generating the Map Tiles
 
 ### Edit shapefiles ###
 
-... then upload them to our s3 server (see above).
+Edit files in scripts/shapefiles/
+
+### Re-generate merged files ###
+
+Only needed if you've edited shapefiles.
+See scripts/README.txt, but basically:
+
+  cd scripts
+  rm -rf routes stops
+  jython merge_shps.py shapefiles routes.json routes
+  jython merge_shps.py shapefiles stops.json stops
+  cd routes
+  zip routes.zip routes.*
+  mv routes.zip ../../tilemill/shapefiles/
+  cd ../stops
+  zip stops.zip stops.*
+  mv stops.zip ../../tilemill/shapefiles/
+
+  git commit
+
+Then upload the merged files from tilemill/shapefiles to our s3
+server (see above).
+
 
 ### Tilemill ###
 
