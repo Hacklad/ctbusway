@@ -32,6 +32,11 @@
         ]
       }
     },
+    "BX_express_buses_merged_tweaked": {
+      "type": "ALL ROUTES TYPE",
+      "agency": "",
+      "name": "%(ROUTE_NAME)s"
+    },
     "amtrak_ct": {
       "type": "amtrak",
       "agency": "",
