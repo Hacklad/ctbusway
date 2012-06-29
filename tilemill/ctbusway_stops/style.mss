@@ -1,4 +1,3 @@
-@boundary:#999;
 @busway:#bbe386;
 @amtrak:#E41A1C;
 @metro_north:#9e1114;
