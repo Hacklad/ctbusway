@@ -69,6 +69,8 @@ Edit styles as needed.
 click Save at upper right.
 
 click Export -> MBTiles at upper right.
+Be sure to reset Zoom to 11-13 !!!
+Yes, every time.
 
 When that finishes, it should give you a link to "download" the export
 (Even though running locally... yep it's odd.)
