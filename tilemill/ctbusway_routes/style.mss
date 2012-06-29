@@ -49,9 +49,6 @@
 }
 
 .routes [type='express_bus'] {
-  [name='BX3 Waterbury Cheshire Off-Peak Express'] {
-    line-dasharray: 2,1;
-  }
   /* all busway */
   line-color:@express_bus;
   [zoom = 11] { line-width:1.5;}
