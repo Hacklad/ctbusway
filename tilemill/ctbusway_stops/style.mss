@@ -75,7 +75,7 @@
   marker-line-opacity:0.9;
   
   text-name:'[name]';
-  text-face-name:'Helvetica Neue Medium';
+  text-face-name:'Helvetica Neue Medium', 'HelveticaNeue Medium';
   text-fill:@text;
   text-character-spacing: 0.5;
   text-halo-fill:@texthalo;

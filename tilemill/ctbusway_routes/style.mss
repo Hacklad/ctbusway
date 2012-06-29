@@ -131,7 +131,7 @@
   line-opacity:0.5;
 
   text-name:'[NAME10]';
-  text-face-name:'Helvetica Neue Medium';
+  text-face-name:'Helvetica Neue Medium', 'HelveticaNeue Medium';
   text-fill:@text;
   text-character-spacing: 0.5;
   text-halo-fill:@texthalo;
