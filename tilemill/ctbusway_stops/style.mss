@@ -1,7 +1,7 @@
 @busway:#bbe386;
 @amtrak:#E41A1C;
 @metro_north:#9e1114;
-@texthalo: #f1f1f1;
+@texthalo: #e3f0cb;
 @text: #444;
 
 .stops {
@@ -47,7 +47,11 @@
     }
     [name='Union Station'] {
       text-dy:-4;
-      text-dx:-4;
+      text-dx:-7;
+    }
+    [name='Sigourney Street'] {
+      text-dy:-2;
+      text-dx:-8;
     }
   }
   [zoom >= 13] {
@@ -65,6 +69,10 @@
       text-dy:-10;
       text-dx:-2;
     }
+    [name='Sigourney Street'] {
+      text-dy:-10;
+      text-dx:-2;
+    }
   }
 
   marker-width:6;
@@ -79,8 +87,7 @@
   text-fill:@text;
   text-character-spacing: 0.5;
   text-halo-fill:@texthalo;
-  text-halo-radius:2;
-  text-size:10;
+  text-halo-radius:3;
   text-allow-overlap: true;
 }
 
