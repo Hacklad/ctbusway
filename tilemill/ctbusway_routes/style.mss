@@ -18,7 +18,7 @@
 @text: #444;
 
 @importanttextsize:15;
- 
+
 .routes {
   ::interactionbuffer {
     line-width:6;
@@ -96,6 +96,12 @@
 }
 
 .routes::on_top[type='busway'] {
+  line-pattern-file:url('img/express_local_1.png');
+  [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
+}
+
+/* Portion of Downtown loops where both express and local run */
+.routes[type='express_and_local'] {
   line-pattern-file:url('img/express_local_1.png');
   [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
 }
