@@ -12,9 +12,9 @@
       "name": "CTfastrak Busway"
     },
     "hartford_loop": {
-      "type": "busway",
       "agency": "",
-      "name": "CTfastrak Downtown Loop"
+      "name": "%(ROUTE_NAME)s",
+      "type": "%(ROUTE_TYPE)s"
     },
     "ALL_ROUTES_TWEAKED": {
       "type": "ALL ROUTES TYPE",
@@ -40,7 +40,7 @@
     "BX_express_buses_merged_tweaked": {
       "type": "ALL ROUTES TYPE",
       "agency": "",
-      "name": "%(ROUTE_NAME)s"
+      "name": "BX1 Waterbury Express, BX2 Cheshire Express, BX3 Waterbury Cheshire Off-Peak Express"
     },
     "amtrak_ct": {
       "type": "amtrak",
