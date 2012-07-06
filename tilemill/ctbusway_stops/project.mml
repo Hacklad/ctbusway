@@ -58,7 +58,7 @@
       "id": "min_poi",
       "class": "poi",
       "Datasource": {
-        "file": "http://ctbusway.s3.amazonaws.com/shp/PointsOfInterest_minimal.zip",
+        "file": "http://ctbusway.s3.amazonaws.com/shp/PointsOfInterest_tweaked.zip",
         "id": "min_poi",
         "project": "ctbusway_routes",
         "srs": null
