@@ -27,7 +27,8 @@
   marker-fill:@metro_north;
   marker-line-color:@metro_north;
 }
-.stops[type='busway'] {
+
+.stops[type='busway'], .poi_labels {
   [zoom < 12] {
     // A lot of work to hide something
     text-fill:transparent;
@@ -35,6 +36,9 @@
     text-size:0;
     text-character-spacing: 0;
   }
+}
+
+.stops[type='busway'] {
   [zoom = 12] {
     text-dx:8;
     text-dy:2;
@@ -97,6 +101,69 @@
   [Type='Medical'] { point-file: url('img/maki/hospital-12.png')}
   [Type='College/University/Adult'] { point-file: url('img/maki/college-18.png')}
 }
+
+.poi_labels {
+  text-name:'[Name]';
+  text-face-name:'Helvetica Neue Medium', 'HelveticaNeue Medium';
+  text-fill:#777;
+  text-character-spacing: 0.5;
+  text-allow-overlap: true;
+  text-wrap-width: 40;
+  text-dx:0;
+  text-dy:10;
+  text-size:9;
+  text-halo-radius:3;
+  text-halo-fill: #FFF;
+
+  [zoom >= 13 ] {
+    text-size: 11;
+  }
+  
+  [Name='Hartford Hospital'] {
+    text-dx:  12;
+    text-dy: 1;
+  }
+  [Name='St. Francis Care Hospital and Medical Center'] {
+    text-dx: -10;
+    text-dy: -10;
+  }
+  [Name='Newington Veterans Hospital'] {
+    text-dx: 16;
+    text-dy: 0;
+    text-wrap-width: 50;
+  }
+  [Name='Newington Market Square'] {
+    text-dx: 16;
+    text-dy: 0;
+    text-wrap-width: 50;
+  }
+
+  // Bishop's Corner. Can't figure out how to escape a single quote.
+  [Id=5] {
+    text-dx: -14;
+    text-dy: -1;
+    text-wrap-width: 40;
+  }
+  [Name='West Hartford Center'] {
+    text-dx: -16;
+    text-dy: 0;
+    text-wrap-width: 30;
+  }
+  [Name='UConn Health Center'] {
+    text-dx: -16;
+    text-dy: 0;
+  }
+  [Name='Central Connecticut State University (CCSU)'] {
+    text-dx: -16;
+    text-dy: 0;
+  }
+  [Name='Westfarms Mall'] {
+    text-dx: -2;
+    text-dy: 12;
+  }
+    
+}
+
 
 .parking[Status='Active'] {
   point-file: url('img/maki/parking-18.png');
