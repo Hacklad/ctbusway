@@ -52,6 +52,11 @@ def get_attrs_from_feature(f, shp_config):
     if attrs['type'] == 'ALL ROUTES TYPE':
         attrs['type'] = get_allroutes_type(**attrs)
 
+    # Special case for combined BX1-BX2-BX3 route name which is too big to
+    # fit in the shapefile field.
+    if ('BX1' in attrs['name'] and 'BX2' in attrs['name'] and 'BX3' in attrs['name']):
+        attrs['name'] = "BX1 Waterbury Express, BX2 Cheshire Express, BX3 Waterbury Cheshire Off-Peak Express"
+
     return attrs
 
 def get_allroutes_type(**kwargs):

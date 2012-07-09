@@ -40,7 +40,7 @@
     "BX_express_buses_merged_tweaked": {
       "type": "ALL ROUTES TYPE",
       "agency": "",
-      "name": "BX1 Waterbury Express, BX2 Cheshire Express, BX3 Waterbury Cheshire Off-Peak Express"
+      "name": "%(ROUTE_NAME)s"
     },
     "amtrak_ct": {
       "type": "amtrak",
