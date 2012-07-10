@@ -10,6 +10,8 @@
 @connector_circulator_bus:#FF7F00;
 
 @amtrak:#E41A1C;
+// @amtrak: transparent;
+
 @metro_north:#9e1114;
 
 @trail:#000;
@@ -92,12 +94,18 @@
 
 .routes::on_top[type='busway_amtrak'] {
   line-pattern-file:url('img/express_local_1amtrak.png');
-  [zoom >= 12] {line-pattern-file:url('img/express_local_2amtrak.png');}
+  [zoom >= 12] {
+    line-pattern-file:url('img/express_local_2amtrak.png');
+  }
+  [zoom >= 13] {
+    line-pattern-file:url('img/express_local_13amtrak.png');
+  }
 }
 
 .routes::on_top[type='busway'] {
   line-pattern-file:url('img/express_local_1.png');
   [zoom >= 12] {line-pattern-file:url('img/express_local_2.png');}
+  [zoom >= 13] {line-pattern-file:url('img/express_local_13.png');}
 }
 
 /* Portion of Downtown loops where both express and local run */
@@ -108,11 +116,12 @@
 
 .routes[type='amtrak'] {
   ::dashes {
-    line-color:@amtrak;
-    line-dasharray: 1,6;
-    [zoom = 11] { line-width:4;}
-    [zoom = 12] { line-width:5;}
-    [zoom >= 13] { line-width:6;}
+   line-color:@amtrak;
+
+   line-dasharray: 1,6;
+   [zoom = 11] { line-width:4;}
+   [zoom = 12] { line-width:5;}
+   [zoom >= 13] { line-width:6;}
   }
   
   /* no busway, but parallel */
